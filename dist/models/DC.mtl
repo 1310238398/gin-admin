@@ -1,0 +1,72 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# 创建的文件:28.03.2019 21:29:49
+
+newmtl BiaoZhunCeng_lambert3SG1
+	Ns 0.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 0.000000 0.000000 0.000000
+	Kd 0.800000 0.800000 0.800000
+	Ks 0.000000 0.000000 0.000000
+	Ke 0.000000 0.000000 0.000000
+	map_Ka zl-neiqing.jpg
+	map_Kd zl-neiqing.jpg
+
+newmtl BiaoZhunCeng_lambert6SG1
+	Ns 0.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 0.000000 0.000000 0.000000
+	Kd 0.800000 0.800000 0.800000
+	Ks 0.000000 0.000000 0.000000
+	Ke 0.000000 0.000000 0.000000
+	map_Ka dt-men.jpg
+	map_Kd dt-men.jpg
+
+newmtl BiaoZhunCeng_lambert5SG1
+	Ns 0.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 0.000000 0.000000 0.000000
+	Kd 0.800000 0.800000 0.800000
+	Ks 0.000000 0.000000 0.000000
+	Ke 0.000000 0.000000 0.000000
+	map_Ka baiseshicai.jpg
+	map_Kd baiseshicai.jpg
+
+newmtl BiaoZhunCeng_lambert4SG1
+	Ns 0.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 0.000000 0.000000 0.000000
+	Kd 0.800000 0.800000 0.800000
+	Ks 0.000000 0.000000 0.000000
+	Ke 0.000000 0.000000 0.000000
+	map_Ka louti.jpg
+	map_Kd louti.jpg
+
+newmtl BiaoZhunCeng_lambert2SG3
+	Ns 0.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 0.000000 0.000000 0.000000
+	Kd 0.800000 0.800000 0.800000
+	Ks 0.000000 0.000000 0.000000
+	Ke 0.000000 0.000000 0.000000
+	map_Ka baicizhuan.jpg
+	map_Kd baicizhuan.jpg
