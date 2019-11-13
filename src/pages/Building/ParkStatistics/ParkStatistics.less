@@ -1,0 +1,161 @@
+.header {
+  height: 86px;
+  //margin-top: -30px; // 后期处理
+  margin-top: 100px;
+  //background: url(../../../assets/building_header.png);
+  background: url(../../../assets/buding_head1.png);
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+  display: flex;
+  margin-left: 18px;
+}
+.headerTitle {
+  // text-align: center;
+  text-align: left;
+  margin-left: 68px;
+  margin-right: 30px;
+  line-height: 86px;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  // width: 200px;
+}
+.headerContent {
+  text-align: left;
+  margin-left: 50px;
+  line-height: 86px;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+}
+.areaContent {
+  color: #00f8fd;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 35px;
+}
+.contentData {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+}
+.headerImage {
+  position: absolute;
+  right: 54px;
+  top: 32px;
+  width: 16px;
+  height: 16px;
+}
+
+.parkNav {
+  background: rgba(46, 91, 255, 0.25);
+  border-radius: 4px 4px 0 0;
+  margin: 16px 28px 32px 32px;
+  border: 2px solid #2e5bff;
+  :global {
+    .ant-card-bordered {
+      background: transparent;
+    }
+  }
+}
+
+.gutterRow {
+  margin-top: 20px;
+  height: 57px;
+  margin: auto;
+}
+.gutterBox {
+  border-right: 2px solid #00f8fd;
+  text-align: center;
+  height: 66px;
+}
+.gutterSellArea {
+  display: flex;
+  border-right: 2px solid #00f8fd;
+  height: 66px;
+}
+.sellAreaRight {
+  flex: 1;
+}
+.sellAreaLeft {
+  flex: 1 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gutterLeaseArea {
+  display: flex;
+}
+.gutterTitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 248, 253, 1);
+}
+.gutterData {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+}
+.sellRate {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0, 248, 253, 1);
+  margin: 0;
+  span {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    margin-left: 15px;
+  }
+}
+.parkDistribution {
+  background: transparent;
+  border: none;
+  margin-top: 16px;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding-bottom: 45px;
+  :global {
+    .ant-card-head {
+      border-bottom: none;
+    }
+  }
+}
+.listNav {
+  display: flex;
+}
+.chart {
+  flex: 1;
+  height: 360px;
+  box-shadow: 0 10px 20px 0 rgba(46, 91, 255, 0.07);
+  border-radius: 4px;
+  border: 1px solid rgba(46, 91, 255, 1);
+  background: rgba(47, 92, 255, 0.25);
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 248, 253, 1);
+  letter-spacing: 1px;
+  :global {
+    .ant-card-head-wrapper {
+      display: flex;
+      align-items: flex-start;
+      text-indent: 2em;
+      background: -webkit-linear-gradient(left, #2f5cff, rgba(255, 0, 0, 0)); /* Safari 5.1 - 6.0 */
+      background: -o-linear-gradient(right, #2f5cff, rgba(255, 0, 0, 0)); /* Opera 11.1 - 12.0 */
+      background: -moz-linear-gradient(right, #2f5cff, rgba(255, 0, 0, 0)); /* Firefox 3.6 - 15 */
+      background: linear-gradient(to right, #2f5cff, rgba(255, 0, 0, 0));
+    }
+  }
+}
+:global {
+  .ant-card-extra {
+    float: right;
+    margin-left: auto;
+    padding: 10px 0;
+    color: rgba(0, 0, 0, 0.65);
+    font-weight: normal;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,232 @@
+.surveyCard {
+  height: calc(100%);
+  border: 0px;
+  :global {
+    .ant-tabs-content {
+      height: calc(100% - 58px);
+    }
+    .ant-tabs-tabpane-active,
+    .ant-layout,
+    .ant-layout-content {
+      height: calc(100%);
+    }
+    .ant-layout-sider {
+      height: calc(100%);
+      overflow-y: scroll;
+    }
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+      background-color: #f5f5f5;
+    }
+
+    /*定义滚动条轨道 内阴影+圆角*/
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      background-color: #fff;
+    }
+
+    /*定义滑块 内阴影+圆角*/
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #aaa;
+    }
+
+    .items {
+      text-align: right;
+      float: right;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      :global {
+        .item {
+          border-radius: 5px 0px 0px 5px;
+          border-top: 1px solid #d9d9d9;
+          border-bottom: 1px solid #d9d9d9;
+          border-left: 1px solid #d9d9d9;
+          margin-top: 5px;
+          :global {
+            .questionCtl.select * {
+              color: #40a9ff;
+            }
+            .questionCtl.select:last-child {
+              border-right: 1px solid #40a9ff;
+            }
+          }
+        }
+        .item.dragging {
+          border-top: 1px solid #ff40e6;
+          border-bottom: 1px solid #40a9ff;
+        }
+        .item.drop {
+          border-top: 2px dotted #d9d9d9;
+        }
+        .item.over {
+          border-top: 2px dotted #40a9ff;
+        }
+      }
+    }
+    .items::after {
+      clear: both;
+    }
+    .questionCtl {
+      :global {
+        span.ant-btn {
+          border-top: 0px;
+          border-bottom: 0px;
+          line-height: 30px;
+          background-color: #fafafa;
+          width: 80px;
+        }
+        .ant-btn {
+          border-top-width: 0px;
+          border-bottom-width: 0px;
+        }
+        .ant-btn:first-child {
+          border-left-width: 0px;
+        }
+        .ant-btn .anticon {
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+}
+
+.radio {
+  padding: 5px 10px 0px 10px;
+  margin-right: 0px;
+}
+
+.questionList {
+  padding: 0px;
+  margin: 0px;
+  :global {
+    .ant-btn:hover {
+      border: 1px solid #40a9ff;
+      background: #40a9ff;
+      color: #fff;
+    }
+  }
+}
+
+.question {
+  :global {
+    input.ant-input {
+      width: calc(100% - 305px);
+      min-width: 100px;
+    }
+    span.ant-btn {
+      line-height: 30px;
+      background-color: #fafafa;
+      width: 80px;
+    }
+  }
+}
+
+.optionArea {
+  height: calc(100% -160px);
+  overflow-y: auto;
+  :global {
+    .ant-layout-content,
+    .ant-layout-sider {
+      height: calc(100% -160px);
+    }
+    .ant-card-body {
+      height: calc(100% -160px);
+      overflow-y: auto;
+    }
+  }
+}
+
+.options {
+  height: calc(100% -100px);
+  min-width: 400px;
+  :global {
+    .ant-list-item {
+      border-bottom: 0px;
+      padding: 5px 5px 0 5px;
+    }
+    .ant-list-item:last-child {
+      padding: 5px 5px 5px 5px;
+    }
+  }
+}
+
+.option {
+  :global {
+    input.ant-input {
+      width: calc(100% - 271px);
+      min-width: 100px;
+    }
+    span.ant-btn {
+      line-height: 30px;
+      background-color: #fafafa;
+      padding: 0px;
+      width: 40px;
+    }
+  }
+}
+
+.fillin {
+  padding: 5px;
+  :global {
+    input.ant-input {
+      width: calc(100% - 100px);
+      min-width: 100px;
+    }
+    span.ant-btn {
+      line-height: 30px;
+      background-color: #fafafa;
+      padding: 0px;
+      width: 100px;
+    }
+  }
+}
+
+.show {
+  overflow-y: auto;
+  height: calc(100%);
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: #f5f5f5;
+  }
+
+  /*定义滚动条轨道 内阴影+圆角*/
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #fff;
+  }
+
+  /*定义滑块 内阴影+圆角*/
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #aaa;
+  }
+  :global {
+    .s_question {
+      display: block;
+      margin: 5px;
+    }
+    .s_question legend > * {
+      padding-right: 5px;
+    }
+    .s_question .sq_req {
+      color: red;
+    }
+    .s_question .sqo_group {
+      width: 100%;
+    }
+    .s_question .sqo_input {
+      max-width: 500px;
+      position: static;
+      border: 0px;
+      border-bottom: 1px solid #6f6f6f;
+      width: inherit;
+    }
+  }
+}

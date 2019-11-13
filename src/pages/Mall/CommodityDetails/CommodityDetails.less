@@ -1,0 +1,109 @@
+.frame {
+  min-width: 600px;
+}
+
+.headImage {
+  width: 120px;
+  height: 140px;
+  margin: 8px;
+  border: 1px solid #ebebeb;
+  padding: 8px;
+}
+.headImageone {
+  width: 120px;
+  height: 140px;
+  margin: 8px;
+  border: 1px solid #ebebeb;
+  padding: 8px;
+}
+.divBox {
+  display: flex;
+}
+
+.divBox1 {
+  display: flex;
+}
+.title {
+  width: 120px;
+  min-width: 120px;
+  line-height: 48px;
+  text-align: right;
+  font-weight: bold;
+}
+.content {
+  line-height: 50px;
+}
+.contentDes {
+  padding-top: 14px;
+}
+
+.titleo1 {
+  // width: 120px;
+  // min-width: 120px;
+  line-height: 48px;
+  /* text-align: right; */
+  font-weight: bold;
+}
+.des {
+  width: 140px;
+  white-space: nowrap; //不换行
+  text-overflow: ellipsis; //超出部分用....代替
+  overflow: hidden; //超出隐藏
+}
+.popoverbackdrop {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+.imgresponsive {
+  position: absolute;
+  // top: 40%;
+  // left: 40%;
+  top: 25%;
+  left: 25%;
+  z-index: 10;
+  display: block;
+  margin-top: 18px;
+  height: 500px !important;
+  width: 500px !important;
+  // height: 240px !important;
+  // width: 320px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+.formTitle {
+  font-size: 16px;
+  color: #2e384d;
+  text-align: left;
+  padding: 0 24px 20px;
+  :global {
+    span {
+      color: #e84228;
+    }
+  }
+}
+
+.formBorder {
+  border: 1px solid #e0e7ff;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 30px;
+  flex: 2;
+}
+:global {
+  .ant-upload-list-item-info > span {
+    display: block;
+    height: 100%;
+  }
+  .ant-divider-horizontal {
+    display: block;
+    clear: both;
+    width: 100%;
+    min-width: 100%;
+    height: 1px;
+    margin: 20px 0;
+  }
+}

@@ -1,0 +1,48 @@
+.listMain {
+  padding: 10px 30px;
+
+  :global {
+    .ant-timeline {
+      color: white;
+      em {
+        color: #a6b9c8;
+      }
+    }
+    .ant-timeline-item-tail {
+      border-left-color: #1b1b1b;
+    }
+    .ant-timeline-item-head {
+      background-color: transparent;
+    }
+  }
+}
+
+.itemContent {
+  list-style: none;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: #2a3136;
+  border-radius: 3px;
+
+  :global {
+    li {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: #fff;
+      margin-top: 10px;
+
+      :global {
+        span:first-child {
+          flex: 0 0 60px;
+          text-align: right;
+        }
+        span:nth-child(2) {
+          flex: 1;
+          font-weight: bolder;
+        }
+      }
+    }
+  }
+}

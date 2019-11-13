@@ -1,0 +1,88 @@
+@import '~antd/lib/style/themes/default.less';
+
+// .container {
+//   background: #f0f2f5;
+//   background-image: url('/background/login.svg');
+//   width: 100%;
+//   min-height: 100%;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   background-size: 100%;
+//   padding: 110px 0 144px 0;
+//   position: relative;
+// }
+.container {
+  //background-image: url('https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg');
+  // background-color: #16191c;
+  // background: linear-gradient(to left, #2b303a 0%, #666a73 50%);
+  background-image: url('/login_bg.png');
+  // background-color: #16191C;
+  width: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  position: relative;
+  :global {
+    .loginArea {
+      margin-top: calc((100vh - 520px) / 2);
+      margin-left: calc((100vw - 1101px) / 2);
+      width: 1101px;
+      height: 520px;
+      position: absolute;
+    }
+    .loginArea .leftImage {
+      width: 567px;
+      height: 520px;
+      margin: 0px;
+    }
+    .loginArea .rightForm {
+      position: absolute;
+      margin: 0px;
+      right: 0px;
+      background-color: white;
+      top: 0px;
+      bottom: 0px;
+      width: 534px;
+      overflow: hidden;
+      border-radius: 0px 20px 20px 0px;
+    }
+  }
+}
+.top {
+  text-align: center;
+}
+
+.header {
+  height: 44px;
+  line-height: 44px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.logo {
+  height: 44px;
+  vertical-align: top;
+  margin-right: 12px;
+}
+
+.title {
+  font-size: 33px;
+  color: @heading-color;
+  font-weight: 600;
+  position: relative;
+}
+
+.desc {
+  font-size: @font-size-base;
+  color: @text-color-secondary;
+  margin-top: 12px;
+  margin-bottom: 40px;
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}

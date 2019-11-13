@@ -1,0 +1,34 @@
+.zoneTree {
+  overflow-y: scroll;
+  height: 100%;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 1px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #666;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background: #ededed;
+  }
+}
+.menuCon {
+  width: 0; /*设置为0 隐藏自定义菜单*/
+  height: 125px;
+  overflow: hidden; /*隐藏溢出的元素*/
+  box-shadow: 0 1px 1px #888, 1px 0 1px #ccc;
+  position: absolute; /*自定义菜单相对与body元素进行定位*/
+}
+.menu {
+  width: 130px;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px;
+}

@@ -1,0 +1,53 @@
+.topExtra {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #d74b56;
+
+  :global {
+    span {
+      font-size: 16px;
+      font-weight: bolder;
+    }
+  }
+}
+
+.list {
+  margin-top: 16px;
+}
+
+.itemContent {
+  list-style: none;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+
+  :global {
+    li {
+      display: flex;
+      height: 40px;
+      align-items: center;
+      font-size: 14px;
+      color: #fff;
+
+      :global {
+        span:nth-child(2) {
+          font-weight: bolder;
+        }
+      }
+    }
+  }
+}
+
+.itemDetail {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  :global {
+    span {
+      cursor: pointer;
+    }
+  }
+}

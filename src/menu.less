@@ -1,0 +1,63 @@
+.ant-menu.purpleMenu {
+  background: #363765;
+  color: #fff;
+  font-size: 15px;
+  border-right: none;
+}
+
+.ant-menu-submenu-active.purpleSubMenu {
+  :global {
+    .ant-menu-submenu-title:hover {
+      color: #fff;
+    }
+
+    .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow::before,
+    .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow::after {
+      background: #fff;
+    }
+  }
+}
+
+.ant-menu-submenu.purpleSubMenu {
+  :active {
+    background: #272851;
+  }
+
+  :global {
+    .ant-menu {
+      background: #272851;
+      font-size: 14px;
+    }
+
+    .ant-menu > .ant-menu-item > a {
+      color: #bfc5d2;
+    }
+
+    .ant-menu > .ant-menu-item > a::after {
+      border-right: none;
+    }
+
+    .ant-menu > .ant-menu-item-selected {
+      background: transparent;
+    }
+
+    .ant-menu > .ant-menu-item-selected::after {
+      border-right: none;
+    }
+
+    .ant-menu > .ant-menu-item-selected > a {
+      color: #fff;
+    }
+
+    .ant-menu > .ant-menu-item-active > a {
+      color: #fff;
+    }
+
+    .ant-menu-submenu-title > .ant-menu-submenu-arrow::before,
+    .ant-menu-submenu-title > .ant-menu-submenu-arrow::after {
+      background: #fff;
+      width: 7px;
+      height: 2px;
+    }
+  }
+}

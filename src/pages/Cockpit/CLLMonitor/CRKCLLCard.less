@@ -1,0 +1,50 @@
+.listCard {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 30px;
+
+  .item {
+    background-color: #2a3136;
+    padding: 10px;
+    margin: 0px 10px 20px 10px;
+    border-radius: 6px;
+    width: 280px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .itemTop {
+    display: flex;
+    align-items: center;
+
+    :global {
+      img {
+        max-width: 22px;
+        max-height: 22px;
+      }
+
+      span {
+        color: #a6b9c8;
+        text-align: left;
+        margin-left: 6px;
+      }
+    }
+  }
+
+  .itemContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+    margin-top: 10px;
+
+    :global {
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+}
