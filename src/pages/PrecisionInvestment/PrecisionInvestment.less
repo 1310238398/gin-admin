@@ -1,0 +1,114 @@
+.indicator {
+  width: 198px;
+  height: 21px;
+  margin-right: 20px;
+}
+
+.content {
+  margin: 15px;
+}
+
+.dropArea {
+  :global {
+    .ant-btn {
+      border-radius: 20px;
+      background: transparent;
+      color: white;
+    }
+  }
+}
+.ctrlArea {
+  :global {
+  }
+}
+.ant-tabs-bar {
+  border-bottom: none;
+}
+.testp {
+  :global {
+    .ant-progress-inner {
+      background-color: #2a3136;
+      border-radius: 2px;
+    }
+  }
+}
+.testpro {
+  :global {
+    .ant-progress-inner {
+      background-color: #4e6576;
+      border-radius: 2px;
+    }
+  }
+}
+.MenuLess {
+  :global {
+    .ant-dropdown-menu {
+      background-color: #2a3136;
+    }
+    .ant-dropdown-menu-item,
+    .ant-dropdown-menu-submenu-title {
+      color: #fff;
+    }
+    .ant-dropdown-menu-item:hover,
+    .ant-dropdown-menu-submenu-title:hover {
+      color: #2a3136;
+    }
+  }
+}
+/*滚动条样式*/
+.MenuLess::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 4px; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 4px;
+}
+.MenuLess::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+}
+.MenuLess::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+.MenuLItem {
+  .global {
+    .ant-dropdown-menu-item,
+    .ant-dropdown-menu-submenu-title {
+      color: #fff;
+    }
+  }
+}
+
+.fullScreen {
+  position: fixed;
+  z-index: 1000000;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.income {
+  :global {
+    .ant-tabs .ant-tabs-left-bar {
+      height: 40%;
+    }
+    .ant-tabs-left-content {
+      border-left: 1px solid #2a3136;
+    }
+  }
+}
+.Legend {
+  :global(.ant-checkbox-wrapper) {
+    color: white;
+  }
+}
+.selectTable {
+  :global {
+    .ant-table-tbody > tr.ant-table-row-selected td {
+      background: #a88b2f;
+    }
+  }
+}

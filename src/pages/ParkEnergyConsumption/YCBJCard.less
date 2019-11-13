@@ -1,0 +1,60 @@
+.listCard {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 30px;
+
+  .item {
+    padding: 10px;
+    margin: 0px 10px 20px 10px;
+    background-color: #2a3136;
+    border-radius: 3px;
+    width: 225px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .itemTop {
+    display: flex;
+    :global {
+      span:first-child {
+        flex: 1;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: left;
+        color: #fff;
+      }
+
+      span:nth-child(2) {
+        flex: 0 0 30px;
+        text-align: right;
+        font-size: 12px;
+        color: #de4d58;
+      }
+    }
+  }
+
+  .itemContent {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+    :global {
+      div {
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+
+        :global {
+          span:first-child {
+            color: #fff;
+          }
+          span:nth-child(2) {
+            color: #ffc400;
+          }
+        }
+      }
+    }
+  }
+}

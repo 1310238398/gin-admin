@@ -1,0 +1,280 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  margin-top: -40px;
+  background-color: #272737;
+  position: relative;
+}
+
+.dataButton {
+  border: 0 none;
+  background: url('/sider-btn-bg-active.png') no-repeat;
+  width: 38px;
+  height: 210px;
+  position: absolute;
+  left: 0;
+  top: 40%;
+  background-size: 100%;
+  color: #fff;
+  font-weight: bold;
+  outline: none;
+  i {
+    background: url(/sider-btn-open.png) no-repeat;
+    width: 14px;
+    height: 13px;
+    display: inline-block;
+    background-size: 100%;
+  }
+}
+
+.typeBox {
+  position: fixed;
+  right: 0;
+  top: 48px;
+  height: 51px;
+  line-height: 55px;
+  color: #fff;
+  ul {
+    padding: 0;
+    background: rgba(0, 0, 0, 0.6);
+    li {
+      border-bottom: 4px solid transparent;
+      padding: 0 15px;
+      display: inline-block;
+      cursor: pointer;
+      i {
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        border-radius: 6px;
+        margin-right: 5px;
+      }
+      .type-20 {
+        background: #2e5bff;
+        box-shadow: 0px 0px 7px 0px #2e5bff;
+      }
+      .type-21 {
+        background: #722eff;
+        box-shadow: 0px 0px 7px 0px #722eff;
+      }
+      .type-30 {
+        background: #eeab00;
+        box-shadow: 0px 0px 7px 0px #eeab00;
+      }
+      .type-31 {
+        background: #5492ff;
+        box-shadow: 0px 0px 7px 0px #5492ff;
+      }
+      .type-40 {
+        background: #91dfe7;
+        box-shadow: 0px 0px 7px 0px #91dfe7;
+      }
+      .type-41 {
+        background: #33ac2e;
+        box-shadow: 0px 0px 7px 0px #33ac2e;
+      }
+      .type-42 {
+        background: #ea6731;
+        box-shadow: 0px 0px 7px 0px #ea6731;
+      }
+    }
+    .active {
+      background: linear-gradient(to top, rgba(46, 91, 255, 0.2), rgba(46, 91, 255, 0));
+      border-bottom: 3px solid rgba(46, 91, 255, 0.6);
+    }
+  }
+}
+
+.areaBox {
+  position: fixed;
+  right: 0;
+  top: 106px;
+  height: calc(100% - 106px);
+  width: 220px;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  transition: right 0.3s;
+  button {
+    color: #fff;
+    border: 0 none;
+    background: url(/sider-btn-bg-right.png) no-repeat;
+    width: 42px;
+    height: 235.5px;
+    position: absolute;
+    left: -42px;
+    top: 40%;
+    background-size: 100%;
+    outline: none;
+    font-weight: bold;
+    padding: 0 10px;
+    .open {
+      width: 14px;
+      height: 13px;
+      display: inline-block;
+      background: url(/sider-btn-open.png) no-repeat;
+      background-size: 100%;
+    }
+    .close {
+      width: 14px;
+      height: 13px;
+      display: inline-block;
+      background: url(/sider-btn-close.png) no-repeat;
+      background-size: 100%;
+    }
+  }
+  dl {
+    color: #fff;
+    font-size: 15px;
+    dt {
+      cursor: pointer;
+      line-height: 60px;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.8);
+    }
+    dd {
+      cursor: pointer;
+      line-height: 40px;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.8);
+      .close {
+        width: 14px;
+        height: 13px;
+        display: inline-block;
+        background: url(/sider-btn-close.png) no-repeat;
+        background-size: 100%;
+        margin-right: 10px;
+      }
+    }
+    .on {
+      color: #ea6731;
+    }
+    .no {
+    }
+  }
+}
+.closeSider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  display: flex;
+
+  .closeSiderLeft {
+    width: 21px;
+    height: 100vh;
+    background: rgba(4, 6, 19, 0.7);
+  }
+
+  .closeSiderRight {
+    position: absolute;
+    top: 47px;
+    left: 21px;
+  }
+}
+
+.siderButton {
+  width: 28px;
+  height: 157px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/assets/sider-btn-bg.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  :global {
+    img {
+      max-width: 14px;
+      max-height: 13px;
+      margin-bottom: 7px;
+    }
+
+    span {
+      writing-mode: vertical-rl;
+      font-size: 14px;
+      font-weight: bolder;
+      color: #ffc400;
+      letter-spacing: 3px;
+    }
+  }
+}
+
+.siderDrawer {
+  :global {
+    .ant-drawer-content {
+      background: transparent;
+      width: 430px;
+    }
+
+    .ant-drawer-body {
+      padding: 0;
+    }
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+      background-color: #f5f5f5;
+    }
+
+    /*定义滚动条轨道 内阴影+圆角*/
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      background-color: #fff;
+    }
+
+    /*定义滑块 内阴影+圆角*/
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #aaa;
+    }
+  }
+}
+
+.openSider {
+  width: 100%;
+  height: 99vh;
+  display: flex;
+
+  .openSiderLeft {
+    background: rgba(4, 6, 19, 0.7);
+    width: 400px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .openSiderRight {
+    width: 30px;
+    margin-top: 47px;
+  }
+}
+/*弹出框的样式*/
+.darkModal {
+  :global {
+    .ant-modal-content {
+      background-color: transparent;
+      background-image: url(../../../assets/building_bg.png);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+    .ant-modal-close {
+      position: absolute;
+      top: 11px;
+      right: 40px;
+      font-size: 33px;
+      z-index: 10;
+      padding: 0;
+      color: #fff;
+      font-weight: 700;
+      line-height: 1;
+      text-decoration: none;
+      background: transparent;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+  }
+}

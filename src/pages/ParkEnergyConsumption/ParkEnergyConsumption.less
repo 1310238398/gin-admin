@@ -1,0 +1,161 @@
+.logo {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.ImageArea {
+  position: relative;
+  :global {
+    .Mark {
+      position: absolute;
+      color: #ffffff;
+      font-size: 14px;
+      text-align: center;
+      vertical-align: middle;
+      :global {
+        button {
+          width: 60px;
+          height: 32px;
+        }
+      }
+    }
+    .A1 {
+      top: calc(77% - 36px);
+      left: calc(62.5% - 30px);
+    }
+    .A1-2 {
+      top: calc(70% - 36px);
+      left: calc(66% - 30px);
+    }
+    .A1-3 {
+      top: calc(83% - 36px);
+      left: calc(68% - 30px);
+    }
+    .A1-4 {
+      top: calc(74% - 36px);
+      left: calc(73% - 30px);
+    }
+    .A1-5 {
+      top: calc(79% - 36px);
+      left: calc(79% - 30px);
+    }
+    .A2-1 {
+      top: calc(61% - 36px);
+      left: calc(70% - 30px);
+    }
+    .A2-2 {
+      top: calc(53% - 36px);
+      left: calc(75% - 30px);
+    }
+    .A2-3 {
+      top: calc(63.5% - 36px);
+      left: calc(76.5% - 30px);
+    }
+    .statics {
+      left: 0;
+      height: 100%;
+      width: 20%;
+      top: 0;
+      position: absolute;
+      background-color: #000c22;
+      opacity: 0.7;
+    }
+    .title {
+      color: #ffffff;
+      width: 100%;
+      font-size: 12pt;
+      text-align: center;
+      margin-top: 10px;
+      vertical-align: middle;
+      width: 100%;
+      position: absolute;
+    }
+    .titletotal {
+      color: #ffffff;
+      font-size: 12pt;
+      text-align: center;
+      margin-top: 100px;
+      vertical-align: middle;
+      width: 100%;
+      height: 200px;
+      position: relative;
+    }
+  }
+
+  .pieLeft {
+    margin-top: 40px;
+    padding-left: 10px;
+  }
+}
+
+.chart1 {
+  :global {
+    .ant-radio-button-wrapper {
+      background: #5b6973;
+    }
+  }
+}
+
+.NHList {
+  height: 422px;
+  display: block;
+  :global(ul) {
+    list-style: none;
+  }
+  :global(.nhitem:hover) {
+    background: #5b6973;
+  }
+  :global(li.lvl2 > .nhleft) {
+    border-right: 5px solid #d74b56;
+  }
+  :global(li.lvl1 > .nhleft) {
+    border-right: 5px solid #ffc400;
+  }
+  :global(li.lvl2 .lvl) {
+    color: #d74b56;
+  }
+  :global(li.lvl1 .lvl) {
+    color: #ffc400;
+  }
+  :global(li) {
+    display: flex;
+    margin-bottom: 15px;
+    :global(.nhleft) {
+      display: inline-block;
+      flex: 100px;
+      padding-right: 3px;
+      img {
+        height: 66px;
+        width: 100px;
+      }
+    }
+
+    :global(.nhright) {
+      padding-left: 20px;
+      padding-right: 5px;
+      display: inline-block;
+      width: calc(100% - 100px - 3px - 5px);
+      :global(.nhline) {
+        margin: 5px;
+        display: flex;
+
+        // flex: 1
+        :global(:first-child) {
+          // float: left;
+          color: #fcfcfc;
+          flex: 1;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      :global(.nhline.sec) {
+        color: #9ca1a5;
+        font-size: 12px;
+        :global(:first-child) {
+          color: #9ca1a5;
+        }
+      }
+    }
+  }
+}

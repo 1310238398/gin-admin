@@ -1,0 +1,46 @@
+.topTitle {
+  margin: 28px 30px;
+  display: flex;
+  flex-direction: column;
+
+  :global {
+    div:first-child {
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    div:nth-child(2) {
+      font-size: 14px;
+      color: #fff;
+      margin-top: 14px;
+
+      :global {
+        span {
+          color: #ffc300;
+        }
+      }
+    }
+  }
+}
+
+.itemCard {
+  margin: 10px 30px;
+  padding: 15px;
+  background-color: #2a3136;
+  border-radius: 3px;
+}
+
+.infoItem {
+  height: 40px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  :global {
+    div {
+      flex: 1;
+      color: #fff;
+      font-size: 14px;
+    }
+  }
+}

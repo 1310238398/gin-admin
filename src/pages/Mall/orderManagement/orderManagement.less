@@ -1,0 +1,74 @@
+@import '~antd/lib/style/themes/default.less';
+
+.sider {
+  background: #ffffff;
+  min-height: 100vh;
+  // box-shadow: 2px 0 6px rgba(0, 21, 41, .35);
+  position: relative;
+  z-index: 10;
+}
+
+.tableList {
+  .tableListOperator {
+    margin-bottom: 16px;
+    button {
+      margin-right: 8px;
+    }
+  }
+}
+
+.tableListForm {
+  :global {
+    .ant-form-item {
+      margin-bottom: 24px;
+      margin-right: 0;
+      display: flex;
+      > .ant-form-item-label {
+        width: auto;
+        line-height: 32px;
+        padding-right: 8px;
+      }
+      .ant-form-item-control {
+        line-height: 32px;
+      }
+    }
+    .ant-form-item-control-wrapper {
+      flex: 1;
+    }
+  }
+  .submitButtons {
+    white-space: nowrap;
+    margin-bottom: 24px;
+  }
+}
+.editArea {
+  height: 500px;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: @screen-lg) {
+  .tableListForm :global(.ant-form-item) {
+    margin-right: 24px;
+  }
+}
+
+@media screen and (max-width: @screen-md) {
+  .tableListForm :global(.ant-form-item) {
+    margin-right: 8px;
+  }
+}
+
+.imgList {
+  margin: 5px;
+  .cell {
+    background: #cccccc;
+    border: #070707;
+    height: 200px;
+    width: 200px;
+    .image {
+      margin: 5px;
+      max-width: 200px;
+      max-height: 200px;
+    }
+  }
+}

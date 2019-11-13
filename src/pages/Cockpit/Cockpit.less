@@ -1,0 +1,233 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #061327;
+  background-image: url('/assets/cockpit/bg-min.jpg'), url('/assets/cockpit/bg_small.jpg'),
+    url(/assets/cockpit/bg-hover-min.jpg);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 100%, 100% 100%;
+  background-position: 0, 50%;
+  overflow: hidden;
+  transition: all 0.3s ease-out 0.3s;
+  :global {
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+}
+
+.top {
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+  display: flex;
+}
+
+.topLeft {
+  flex: 1;
+}
+
+.topLeftLogo {
+  margin-left: 11.97vw; // 230/1920*100
+  margin-top: 8.14vh; // 88/1080*100
+  width: 7.23vw; // 141/1920*100
+  height: 3.33vh; // 36/1080*100
+  background-image: url('/assets/cockpit/logo-top5.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.topRight {
+  flex: 1;
+}
+
+.topCenter {
+  margin-top: 6.2vh; // 67/1080*100
+  flex: 0 0 44.79vw; // 860/1920*100
+  height: 6.48vh; // 70/1080*100
+  background-image: url('/assets/cockpit/top.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  :global {
+    span {
+      height: 100%;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #00d866;
+      font-size: 1.66vh; // 18/1080*100
+      font-weight: bolder;
+    }
+  }
+}
+
+.items {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  z-index: 2;
+  transform: scale(0.1);
+  transition: all 0.3s ease-out 0.3s;
+  pointer-events: none;
+  :global {
+    li {
+      position: absolute;
+      color: #00d866;
+      font-size: 2.59vh; // 24/1080*100
+      width: 15.67vw; // 301/1920*100
+      height: 14.9vh; // 161/1080*100
+      background-image: url('/assets/cockpit/item2.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-weight: bolder;
+    }
+    li > a {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      color: #00d866;
+      text-decoration: none;
+    }
+    li:hover {
+      color: #fff;
+      cursor: pointer;
+      background-image: url('/assets/cockpit/item2-hover.png');
+    }
+    li > a:hover {
+      color: #fff;
+    }
+    li:first-child {
+      left: 10.83vw; // 208/1920*100
+      bottom: 19.44vh; // 210/1080*100
+    }
+    li:nth-child(2) {
+      left: 19.47vw; // 374/1920*100
+      bottom: 34.53vh; // 373/1080*100
+    }
+    li:nth-child(3) {
+      left: 28.22vw; // 542/1920*100
+      bottom: 49.62vh; // 536/1080*100
+    }
+    li:nth-child(4) {
+      left: 42.3vw; // 836/1920*100
+      bottom: 54.44vh; // 588/1080*100
+    }
+    li:nth-child(5) {
+      right: 28.07vw; // 539/1920*100
+      bottom: 49.53vh; // 535/1080*100
+    }
+    li:nth-child(6) {
+      right: 19.37vw; // 372/1920*100
+      bottom: 34.44vh; // 372/1080*100
+    }
+    li:nth-child(7) {
+      right: 10.78vw; // 207/1920*100
+      bottom: 19.25vh; // 208/1080*100
+    }
+  }
+}
+
+.bottom {
+  position: absolute;
+  z-index: 9;
+  width: 33.54vw; // (644/1920)*100
+  height: 27.68vh; // (299/1080)*100
+  left: 33.23vw; // (100vw-33.54vw)/2
+  bottom: 18.51vh; // (200/1080)*100
+  background-color: transparent;
+  background-image: url('/assets/cockpit/aura.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.bottomHover {
+  position: absolute;
+  z-index: 1;
+  width: 34.37vw; // (660/1920)*100
+  height: 30.18vh; // (326/1080)*100
+  left: 32.81vw; // (100vw-34.37vw)/2
+  bottom: 18.51vh; // (200/1080)*100
+  background-color: transparent;
+  background-image: url('/assets/cockpit/aura-hover.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.bottomLogo {
+  width: 30.2vw; // (580/1920)*100
+  height: 20.27vh; // (219/1080)*100
+  background-color: transparent;
+  background-image: url('/assets/cockpit/logo4.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.darkModal {
+  :global {
+    .ant-modal-close-x:hover {
+      color: #fc4;
+      zoom: 1.2;
+    }
+    .ant-modal-close-x {
+      color: #fff;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+    }
+    .ant-modal-title {
+      color: #fff;
+    }
+    .ant-modal-body {
+      padding: 0;
+    }
+    .ant-modal-header,
+    .ant-modal-body,
+    .ant-modal-footer {
+      background-color: #08132a;
+      border-bottom: 0;
+      border-top: 0;
+    }
+    .ant-modal-body {
+      border-radius: 10px;
+    }
+    .ant-modal-content {
+      background-image: url(/assets/main_bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      height: 100vh;
+    }
+    .park .ant-card-body {
+      padding-top: 0;
+    }
+    .ant-modal-close {
+      position: absolute;
+      top: 34px;
+      right: 34px;
+    }
+  }
+}
+.readioNew {
+  :global {
+    .ant-radio-button-wrapper-checked {
+      background-color: #4577e4;
+      color: #fff;
+      border-color: transparent;
+    }
+  }
+}
