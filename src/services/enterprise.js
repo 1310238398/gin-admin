@@ -50,6 +50,7 @@ export async function update(params) {
     body: params,
   });
 }
+
 // 设为热门企业
 export async function enterpriseSetHot(params) {
   return request(`${baseURLV1}/${buRouter}/${params}/enable_hot`, {
@@ -59,6 +60,20 @@ export async function enterpriseSetHot(params) {
 // 取消热门企业
 export async function enterpriseCancelHot(params) {
   return request(`${baseURLV1}/${buRouter}/${params}/disable_hot`, {
+    method: 'PATCH',
+  });
+}
+
+// 设为私密企业
+export async function enterpriseSetPrivacy(params) {
+  return request(`${baseURLV1}/${buRouter}/${params}/enable_privacy`, {
+    method: 'PATCH',
+  });
+}
+
+// 取消私密企业
+export async function enterpriseCancelPrivacy(params) {
+  return request(`${baseURLV1}/${buRouter}/${params}/disable_privacy`, {
     method: 'PATCH',
   });
 }

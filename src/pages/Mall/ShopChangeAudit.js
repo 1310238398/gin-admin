@@ -459,7 +459,7 @@ export default class ShopChangeAudit extends PureComponent {
                     查询
                   </Button>
                   <Button style={{ marginLeft: 8 }} onClick={this.onBtnClearClick}>
-                    清空
+                    重置
                   </Button>
                 </Col>
               </Row>

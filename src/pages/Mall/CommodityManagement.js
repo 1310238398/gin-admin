@@ -17,6 +17,7 @@ import {
 // import TableList from '../../components/TableList';
 import FormItem from 'antd/lib/form/FormItem';
 import CommodityDetails from './CommodityDetails/CommodityDetails';
+import SetrecomdValue from './SetrecomdValue';
 import PageHeaderLayout from '../../layouts/PageHeaderLayout';
 import { DicSelect, DicShow } from '@/components/Dictionary';
 import styles from './CommodityManagement.less';
@@ -31,6 +32,10 @@ export default class CommodityManagement extends PureComponent {
     //   visible: false,
     //   data: null,
     // },
+    recomdValueFrame: {
+      visible: false,
+      data: null,
+    },
   };
 
   queryForm = null;
@@ -67,6 +72,29 @@ export default class CommodityManagement extends PureComponent {
   onBtnClearClick = () => {
     this.props.form.resetFields();
     this.onBtnSearchClick();
+  };
+
+  // 设置推荐值
+  setRecomendFrame = rec => {
+    this.setState({
+      recomdValueFrame: {
+        visible: true,
+        data: rec,
+      },
+    });
+  };
+
+  /**
+   * 子窗口关闭回调
+   */
+  closeRecommdFrame = () => {
+    // 关闭窗口
+    this.setState({
+      recomdValueFrame: {
+        visible: false,
+        data: null,
+      },
+    });
   };
 
   /**
@@ -203,6 +231,7 @@ export default class CommodityManagement extends PureComponent {
             overlay={
               <Menu>
                 <Menu.Item onClick={() => this.showCommodityInfoFrame(record)}>查看</Menu.Item>
+                <Menu.Item onClick={() => this.setRecomendFrame(record)}>设置推荐值</Menu.Item>
                 {record.goods_status === 3 ? (
                   <Menu.Item onClick={() => this.forbidThesale(record)}>解禁</Menu.Item>
                 ) : null}
@@ -216,6 +245,11 @@ export default class CommodityManagement extends PureComponent {
             <Button>操作</Button>
           </Dropdown>
         ),
+      },
+      {
+        title: '推荐值',
+        dataIndex: 'recommend_num',
+        width: 100,
       },
       {
         title: '商品名称',
@@ -387,7 +421,7 @@ export default class CommodityManagement extends PureComponent {
                     查询
                   </Button>
                   <Button style={{ marginLeft: 8 }} onClick={this.onBtnClearClick}>
-                    清空
+                    重置
                   </Button>
                 </Col>
               </Row>
@@ -410,6 +444,12 @@ export default class CommodityManagement extends PureComponent {
             data={dataSoure}
             visible={seeVisible}
             onShopInfoFrameCloseCallback={this.closeSubFrame}
+          />
+        )}
+        {this.state.recomdValueFrame.visible && (
+          <SetrecomdValue
+            data={this.state.recomdValueFrame.data}
+            onCloseCallback={this.closeRecommdFrame}
           />
         )}
       </div>

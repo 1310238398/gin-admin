@@ -165,6 +165,7 @@ export default class LeaseAuditList extends PureComponent {
       },
       {
         title: '房源类型',
+        width: 100,
         dataIndex: 'desc.extras.fl',
         render: val => {
           return <DicShow pcode="cms$#infos$#fylx" code={[val]} />;
@@ -173,24 +174,29 @@ export default class LeaseAuditList extends PureComponent {
       {
         title: '发布人昵称（姓名）',
         dataIndex: 'desc.owner',
+        width: 100,
         render: val => {
           return <UserShow uid={val} />;
         },
       },
       {
         title: '联系人姓名',
+        width: 100,
         dataIndex: 'desc.extras.lxr',
       },
       {
         title: '联系人电话',
+        width: 100,
         dataIndex: 'desc.extras.lxdh',
       },
       {
         title: '房源地址',
+        width: 100,
         dataIndex: 'desc.extras.fydz',
       },
       {
         title: '房源状态',
+        width: 100,
         dataIndex: 'status.status',
         render: val => {
           return <DicShow pcode="cms$#infos$#zlxxstatus" code={[val]} />;
@@ -199,7 +205,7 @@ export default class LeaseAuditList extends PureComponent {
       {
         title: '发布时间',
         dataIndex: 'operator.cre_time',
-        // width: 200,
+        width: 240,
         render: val => {
           return <span>{parseUtcTime(val)}</span>;
         },

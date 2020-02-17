@@ -274,7 +274,7 @@ export default class NoticeRelease extends React.PureComponent {
               查询
             </Button>
             <Button type="danger" style={{ marginLeft: 8 }} onClick={this.onBtnClearClick}>
-              清空
+              重置
             </Button>
             <a style={{ marginLeft: 8, fontSize: 12 }} onClick={this.onQueryFormToggleClick}>
               {' '}

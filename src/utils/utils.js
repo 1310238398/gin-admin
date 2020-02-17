@@ -169,3 +169,30 @@ export function getPhoto(v) {
   }
   return `/${v}`;
 }
+
+export function compareArrayAndAdd(src, dist) {
+  for (let i = 0; i < src.length; i += 1) {
+    let exists = false;
+    for (let j = 0; j < dist.length; j += 1) {
+      if (src[i] === dist[i]) {
+        exists = true;
+        break;
+      }
+    }
+    if (!exists) {
+      dist.push(src[i]);
+    }
+  }
+  return dist;
+}
+
+
+// Form 表单验证手机号
+export function checkPhoneNum(_, value, callback) {
+  if (value) {
+    if (!/^1[3|4|5|6|7|8|9][0-9]{9}$/.test(value)) {
+      callback('请输入正确的手机号');
+    }
+  }
+  callback();
+}

@@ -19,6 +19,7 @@ import PageHeaderLayout from '../../../layouts/PageHeaderLayout';
 import { SearchCard, SearchItem } from '../../../components/SearchCard';
 import * as Service from '@/services/electricInvoices';
 import { DicSelect } from '@/components/Dictionary';
+import { DicShow } from '@/components/Dictionary';
 
 import * as electricRechargesService from '@/services/electricRecharges';
 
@@ -106,6 +107,15 @@ export default class extends PureComponent {
 
   onClose = () => {
     this.setState({ editVisible: false });
+    this.clearSelectRows();
+  };
+
+  clearSelectRows = () => {
+    const { selectedRowKeys } = this.state;
+    if (selectedRowKeys.length === 0) {
+      return;
+    }
+    this.setState({ selectedRowKeys: [], selectedRows: [] });
   };
 
   onSaved = info => {
@@ -120,7 +130,13 @@ export default class extends PureComponent {
     }
   };
 
-  handleTableSelectRow = (keys, rows) => {
+  handleTableSelectRow = (selectedRowKeys, selectedRows) => {
+    let keys = selectedRowKeys;
+    let rows = selectedRows;
+    if (selectedRowKeys.length > 1) {
+      keys = [selectedRowKeys[selectedRowKeys.length - 1]];
+      rows = [selectedRows[selectedRowKeys.length - 1]];
+    }
     this.setState({
       selectedRowKeys: keys,
       selectedRows: rows,
@@ -180,27 +196,59 @@ export default class extends PureComponent {
           if (type === 1 || type === 3) {
             return <Badge color="blue" text="普票" />;
           } else {
-            return '';
+            return '暂无';
           }
         }
       },
     },
+    // {
+    //   title: '支付方式',
+    //   dataIndex: 'payment_method',
+    //   width: 120,
+    //   render: (val, item) => {
+    //     switch (val) {
+    //       case 'alipay_app':
+    //         return <Badge color="blue" text="支付宝" />;
+    //       case 'wechat_app':
+    //         return <Badge color="green" text="微信" />;
+    //       default:
+    //         return item.pay_status === 3 ? (
+    //           <Badge color="red" text="支付失败" />
+    //         ) : (
+    //           <Badge color="red" text="未支付" />
+    //         );
+    //     }
+    //   },
+    // },
     {
       title: '支付方式',
       dataIndex: 'payment_method',
       width: 120,
+      render: val => {
+        if (val === null || val === '') {
+          return '暂无';
+        }
+        return <DicShow pcode="OPER$#wallet$#channel" code={[val]} show={name => name} />;
+      },
+    },
+    {
+      title: '支付状态',
+      dataIndex: 'pay_status',
+      width: 120,
       render: (val, item) => {
         switch (val) {
-          case 'alipay_app':
-            return <Badge color="blue" text="支付宝" />;
-          case 'wechat_app':
-            return <Badge color="green" text="微信" />;
+          case 1:
+            return <Badge color="orange" text="未支付" />;
+          case 2:
+            return <Badge color="green" text="支付成功" />;
+          case 3:
+            return <Badge color="red" text="支付失败" />;
+          case 4:
+            return <Badge color="red" text="订单过期" />;
+          case 5:
+            return <Badge color="red" text="异常状态" />;
           default:
-            return item.pay_status === 3 ? (
-              <Badge color="red" text="支付失败" />
-            ) : (
-              <Badge color="red" text="未支付" />
-            );
+            return '暂无';
         }
       },
     },
@@ -214,7 +262,7 @@ export default class extends PureComponent {
         } else if (val === 2) {
           return <Badge color="green" text="已交账" />;
         } else {
-          return '';
+          return '暂无';
         }
       },
     },
@@ -255,16 +303,11 @@ export default class extends PureComponent {
       title: '支付时间',
       dataIndex: 'pay_time',
       width: 180,
-      render: (val, item) => {
-        if (item.payment_method === 'alipay_app' || item.payment_method === 'wechat_app') {
-          return moment(val).format('YYYY-MM-DD HH:mm:ss');
-        } else {
-          return item.pay_status === 3 ? (
-            <Badge color="red" text="支付失败" />
-          ) : (
-            <Badge color="red" text="未支付" />
-          );
+      render: val => {
+        if (val === null) {
+          return '暂无';
         }
+        return moment(val).format('YYYY-MM-DD HH:mm:ss');
       },
     },
   ];
@@ -326,10 +369,10 @@ export default class extends PureComponent {
   };
 
   // 单个交账
-  onItemAccouClick=value=>{
-    electricRechargesService.plcl({ ids:value.record_id });
+  onItemAccouClick = value => {
+    electricRechargesService.plcl({ ids: value.record_id });
     this.getList();
-  }
+  };
 
   renderSearchForm() {
     const { getFieldDecorator } = this.props.form;
@@ -353,27 +396,36 @@ export default class extends PureComponent {
         </SearchItem>
         <SearchItem label="支付方式">
           {getFieldDecorator('paymentMethod')(
-            <Select placeholder="支付方式">
-              <Select.Option key="alipay_app" value="alipay_app">
-                <Badge color="blue" text="支付宝" />
-              </Select.Option>
-              <Select.Option key="wechat_app" value="wechat_app">
-                <Badge color="green" text="微信" />
-              </Select.Option>
-            </Select>
+            <DicSelect
+              vmode="string"
+              pcode="OPER$#wallet$#channel"
+              selectProps={{ placeholder: '请选择' }}
+            />
+
+            // <Select placeholder="支付方式">
+            //   <Select.Option key="alipay_app" value="alipay_app">
+            //     <Badge color="blue" text="支付宝" />
+            //   </Select.Option>
+            //   <Select.Option key="wechat_app" value="wechat_app">
+            //     <Badge color="green" text="微信" />
+            //   </Select.Option>
+            // </Select>
           )}
         </SearchItem>
         <SearchItem label="支付状态">
           {getFieldDecorator('payStatus')(
             <Select placeholder="支付状态">
               <Select.Option key={1} value={1}>
-                未支付
+                <Badge color="orange" text="未支付" />
               </Select.Option>
               <Select.Option key={2} value={2}>
-                支付成功
+                <Badge color="green" text="支付成功" />
               </Select.Option>
               <Select.Option key={3} value={3}>
-                支付失败
+                <Badge color="red" text="支付失败" />
+              </Select.Option>
+              <Select.Option key={4} value={4}>
+                <Badge color="red" text="订单过期" />
               </Select.Option>
             </Select>
           )}
@@ -480,23 +532,25 @@ export default class extends PureComponent {
                 </Button>
               )}
               {formData &&
-              (formData.billingStatus !== undefined && formData.is_submit !== undefined)
+                (formData.billingStatus !== undefined && formData.is_submit !== undefined)
                 ? selectedRows &&
-                  selectedRows.length >= 1 &&
-                  ((formData.billingStatus === 1 || formData.billingStatus === 3) &&
-                    formData.is_submit === 1) && (
-                    <Button type="primary" onClick={() => this.onItemAccountClick(selectedRows)}>
-                      批量交账
+                selectedRows.length >= 1 &&
+                ((formData.billingStatus === 1 || formData.billingStatus === 3) &&
+                  formData.is_submit === 1) && (
+                  <Button type="primary" onClick={() => this.onItemAccountClick(selectedRows)}>
+                    批量交账
                     </Button>
-                  )
+                )
                 : selectedRows &&
-                  selectedRows.length === 1 &&
-                  (((selectedRows[0].invoice&&selectedRows[0].invoice.length ===1 || selectedRows[0].invoice&&selectedRows[0].invoice.length === 3) &&
-                    selectedRows[0].is_submit === 1)||(selectedRows[0].special_invoice===2&&selectedRows[0].is_submit === 1))&&(
-                    <Button type="primary" onClick={() => this.onItemAccouClick(selectedRows[0])}>
-                      交账
+                selectedRows.length === 1 &&
+                ((((selectedRows[0].invoice && selectedRows[0].invoice.length === 1) ||
+                  (selectedRows[0].invoice && selectedRows[0].invoice.length === 3)) &&
+                  selectedRows[0].is_submit === 1) ||
+                  (selectedRows[0].special_invoice === 2 && selectedRows[0].is_submit === 1)) && (
+                  <Button type="primary" onClick={() => this.onItemAccouClick(selectedRows[0])}>
+                    交账
                     </Button>
-                  )}
+                )}
             </div>
             <Table
               rowSelection={{

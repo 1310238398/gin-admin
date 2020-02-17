@@ -75,6 +75,9 @@ class MerchantsStatistics extends PureComponent {
               <Button type="primary" onClick={this.showTX}>
                 提现
               </Button>
+              <Button type="primary" onClick={this.historyList}>
+                提现历史
+              </Button>
             </Col>
           </Row>
         </Card>

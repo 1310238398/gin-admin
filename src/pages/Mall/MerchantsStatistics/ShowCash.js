@@ -36,10 +36,8 @@ export default class ShowCash extends PureComponent {
         onSubmit(formData);
       }
     });
-    this.props.dispatch({
-      type: 'merchantsStatistics/showTX',
-      payload: true,
-    });
+    this.props.handleDataFormCancel();
+   
   };
 
   handleDataFormSubmit = value => {
@@ -69,7 +67,6 @@ export default class ShowCash extends PureComponent {
       merchantsStatistics: { visibleTxMoal, storePhone },
       balanyu,
     } = this.props;
-    const { clickflag, time_number } = this.state;
     const formItemLayout = {
       labelCol: {
         xs: { span: 24 },

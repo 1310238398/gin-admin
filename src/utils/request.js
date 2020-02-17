@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { notification } from 'antd';
+import store from './store';
 
 export const baseURL = '/oper/web';
 
@@ -15,7 +16,10 @@ export const newBaseUrl = '/ops/web/v1';
 export const cmsURLV1 = '/cms/ops/v1';
 export const cmsURLoper = '/cms/oper/v1';
 export const baseUrlMall = '/mall/web/v1';
+export const baseUrlMall2 = '/gxtmall/web/v1';
+export const baseUrlAd = '/ad/web/v1';
 export const oldbaseURLV1 = '/oldoper/web/v1';
+
 export default async function request(url, options) {
   let showNotify = true;
   const opts = {
@@ -23,14 +27,18 @@ export default async function request(url, options) {
     validateStatus() {
       return true;
     },
+    withCredentials: true,
     ...options,
   };
   if (opts.notNotify) {
     showNotify = false;
   }
 
+  const parkItem = store.getDefaultPark();
   const defaultHeader = {
-    ParkID: 'e5c85e03-22f8-4135-9992-89f8fa44bc2b',
+    ParkID: parkItem.id,
+    // ParkID: 'e5c85e03-22f8-4135-9992-89f8fa44bc2b',
+    // ParkID: '05b3ae31-862b-4ab9-87bf-a8ae274e44e5',
   };
   if (opts.method === 'POST' || opts.method === 'PUT') {
     defaultHeader['Content-Type'] = 'application/json; charset=utf-8';

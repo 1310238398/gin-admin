@@ -82,6 +82,7 @@ class NotifListView extends PureComponent {
   };
 
   renderItemName = (val, record) => {
+    debugger
     switch (record.bu_type) {
       case 1:
         return <EnterpriseShow value={val} />;

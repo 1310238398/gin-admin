@@ -150,7 +150,7 @@ export default class EnterpriseAuditInfo extends PureComponent {
       bigImagepid: false,
     });
   }
-  
+
   hideBigImagepid2() {
     this.setState({
       bigImagepid2: false,
@@ -254,7 +254,7 @@ export default class EnterpriseAuditInfo extends PureComponent {
                   </span>
                   <span> 申请状态: {this.statusRender(formData.status)}</span>
                 </span>
-                <span>
+                {/* <span>
                   入驻园区地址：
                   {formData.enterprise.buildings &&
                     formData.enterprise.buildings.map(item => {
@@ -265,7 +265,7 @@ export default class EnterpriseAuditInfo extends PureComponent {
                         </Tag>
                       );
                     })}
-                </span>
+                </span> */}
                 <span>
                   {formData.status !== 1 && formData.audit_time
                     ? `通过/驳回时间：${parseUtcTime(formData.audit_time, 'YYYY-MM-DD')}`
@@ -276,6 +276,19 @@ export default class EnterpriseAuditInfo extends PureComponent {
             </div>
 
             <div className={styles.form} style={{ marginTop: 25 }}>
+              <DescriptionList title="" size="large" style={{ marginBottom: 32 }} col={1}>
+                <Description term="入驻园区地址">
+                  {formData.enterprise.buildings &&
+                    formData.enterprise.buildings.map(item => {
+                      return (
+                        <Tag>
+                          {item.building_name}
+                          {this.renderBuildingType(item.incoming_type)}
+                        </Tag>
+                      );
+                    })}
+                </Description>
+              </DescriptionList>
               <DescriptionList title="" size="large" style={{ marginBottom: 32 }}>
                 <Description term="企业电话">{formData.enterprise.phone}</Description>
                 <Description term="企业邮箱">{formData.enterprise.zip_code}</Description>

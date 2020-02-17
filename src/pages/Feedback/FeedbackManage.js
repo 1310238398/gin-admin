@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'dva';
-import { Card, Form, Badge, Tag } from 'antd';
+import { Card, Form, Badge, Tag,Tooltip,Button } from 'antd';
 import PageHeaderLayout from '../../layouts/PageHeaderLayout';
 import { parseUtcTime } from '../../utils/utils';
 import InfoCard from './InfoCard';
@@ -145,7 +145,14 @@ export default class FeedbackManage extends PureComponent {
       {
         title: '内容',
         dataIndex: 'desc.title',
-        // width: 320,
+        render: val => {
+          return (
+            <Tooltip placement="rightBottom" title={val}>
+              <Button style={{border:'0px'}}>{val}</Button>
+            </Tooltip>
+          );
+        },
+        width: 320,
       },
       {
         title: '反馈用户',
@@ -182,7 +189,6 @@ export default class FeedbackManage extends PureComponent {
       columns,
       pagination: paginationProps,
       onChange: this.onTableChange,
-      scroll: { x: 1000 },
     };
     return (
       <PageHeaderLayout title="信息管理">

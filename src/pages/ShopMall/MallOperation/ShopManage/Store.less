@@ -1,0 +1,167 @@
+
+
+@import '~antd/lib/style/themes/default.less';
+@import '../../../../utils/utils.less';
+
+.tableList {
+  .tableListOperator {
+    margin-bottom: 16px;
+    button {
+      margin-right: 8px;
+    }
+  }
+}
+
+.tableListForm {
+  :global {
+    .ant-form-item {
+      margin-bottom: 24px;
+      margin-right: 0;
+      display: flex;
+      > .ant-form-item-label {
+        width: auto;
+        line-height: 32px;
+        padding-right: 8px;
+      }
+      .ant-form-item-control {
+        line-height: 32px;
+      }
+    }
+    .ant-form-item-control-wrapper {
+      flex: 1;
+    }
+  }
+  .submitButtons {
+    white-space: nowrap;
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (max-width: @screen-lg) {
+  .tableListForm :global(.ant-form-item) {
+    margin-right: 24px;
+  }
+}
+
+@media screen and (max-width: @screen-md) {
+  .tableListForm :global(.ant-form-item) {
+    margin-right: 8px;
+  }
+}
+
+.seeImg {
+  width: 104px;
+  height: 104px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #d9d9d9;
+  position: relative;
+  img {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+}
+.textAlignLeft {
+  text-align: left;
+}
+.marginTL {
+  color: #008000;
+  font-size: 14px;
+}
+.imgMask {
+  width: 100%;
+  height: 100%;
+}
+.black {
+  .preview {
+    width: 86px;
+    height: 86px;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    transition: 0.5s all;
+    .icon {
+      position: absolute;
+      z-index: 2;
+      top: 40%;
+      left: 40%;
+      cursor: pointer;
+    }
+  }
+}
+.ImgContent {
+  width: 700px;
+  height: 700px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  margin-left: -350px;
+}
+.maskWrap {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+.maskWrapImg {
+  width: 700px;
+  height: 700px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-left: -250px;
+}
+// 新改的样式-用于商户录入数据
+.stopTop {
+  background-color: #ffffff;
+  padding: 0px 17px 22px 24px;
+}
+.stopTitle {
+  height: 80px;
+  border-bottom: 1px solid #eaefff;
+  p {
+    height: 80px;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(46, 56, 77, 1);
+    line-height: 80px;
+  }
+}
+.stopFlex {
+  display: flex;
+}
+.stopUse {
+  height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(135, 152, 173, 1);
+  line-height: 20px;
+}
+.APPLYStore {
+  background-color: #ffffff;
+}
+.TOPtitle {
+  height: 80px;
+  background-color: #ffffff;
+  line-height: 80px;
+  border-bottom: 1px solid #eaefff;
+  padding-top: 25px;
+  p {
+    height: 32px;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(46, 56, 77, 1);
+    line-height: 32px;
+  }
+}
+
+
+
+
+

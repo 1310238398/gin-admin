@@ -4,6 +4,7 @@ import moment from 'moment';
 import * as Service from '@/services/electricInvoices';
 import * as invoicePayableService from '@/services/invoicePayable';
 import * as electricRechargesService from '@/services/electricRecharges';
+import { DicShow } from '@/components/Dictionary';
 
 import styles from './Edit.less';
 
@@ -525,20 +526,28 @@ export default class extends PureComponent {
                   <td>
                     {
                       {
-                        1: <Badge color="yellow" text="支付中" />,
+                        1: <Badge color="orange" text="未支付" />,
                         2: <Badge color="green" text="支付成功" />,
                         3: <Badge color="red" text="支付失败" />,
+                        4: <Badge color="red" text="订单过期" />,
+                        5: <Badge color="red" text="异常状态" />,
                       }[editInfo.pay_status]
-                    }
+                    }{editInfo.pay_status === 3 ? `(${editInfo.pay_fail_reason})` : '' }                  
                   </td>
                   <th>支付方式</th>
                   <td>
-                    {
+                    {/* {
                       {
                         alipay_app: <Badge color="blue" text="支付宝" />,
                         wechat_app: <Badge color="green" text="微信" />,
                       }[editInfo.payment_method]
-                    }
+                    } */}
+                    {editInfo.payment_method?<DicShow
+                      pcode="OPER$#wallet$#channel"
+                      code={[editInfo.payment_method]}
+                      show={name => name}
+                    />:'暂无'}
+                    
                   </td>
                 </tr>
                 <tr>
@@ -561,14 +570,18 @@ export default class extends PureComponent {
                 <tr>
                   <th>支付时间</th>
                   <td>
-                    {editInfo.payment_method === 'alipay_app' ||
-                    editInfo.payment_method === 'wechat_app' ? (
-                      moment(editInfo.pay_time).format('YYYY-MM-DD HH:mm:ss')
-                    ) : editInfo.pay_status === 3 ? (
-                      <Badge color="red" text="支付失败" />
-                    ) : (
-                      <Badge color="red" text="未支付" />
-                    )}
+                    {editInfo.pay_time === null || editInfo.pay_time === ''
+                      ? '暂无'
+                      : moment(editInfo.pay_time).format('YYYY-MM-DD HH:mm:ss')}
+
+                    {/* {editInfo.payment_method === 'alipay_app' ||
+                     editInfo.payment_method === 'wechat_app' ? (
+                       moment(editInfo.pay_time).format('YYYY-MM-DD HH:mm:ss')
+                     ) : editInfo.pay_status === 3 ? (
+                       <Badge color="red" text="支付失败" />
+                     ) : (
+                       <Badge color="red" text="未支付" />
+                    )} */}
                   </td>
                   <th>充值金额</th>
                   <td>{(editInfo.amount / 100).toFixed(2)} 元</td>

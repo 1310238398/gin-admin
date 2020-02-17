@@ -119,7 +119,7 @@ export default class StoreApplySever extends React.PureComponent {
           if (values.issue_time && values.issue_time !== '') {
             values.issue_time = values.issue_time.format('YYYY-MM-DD');
           }
-         
+
           const formData = { ...values };
           formData.portrait = values.portrait[0];
           formData.license_image = values.license_image[0];
@@ -781,20 +781,20 @@ export default class StoreApplySever extends React.PureComponent {
               )}
 
               <div>
-                <Row>
-                  <Col {...colC} style={{ textAlign: 'center' }}>
-                    <Checkbox checked={this.state.checked} onChange={this.checkedChange}>
-                      已阅读并接受
-                    </Checkbox>
-                    <span
-                      onClick={this.shopRegulation}
-                      style={{ color: '#3f88bf', marginLeft: '-17px' }}
-                    >
-                      《开店规约》
-                    </span>
-                  </Col>
-                </Row>
-                {formData.application_status === 3 && (
+                {formData.application_status === 3 && [
+                  <Row>
+                    <Col {...colC} style={{ textAlign: 'center' }}>
+                      <Checkbox checked={this.state.checked} onChange={this.checkedChange}>
+                        已阅读并接受
+                      </Checkbox>
+                      <span
+                        onClick={this.shopRegulation}
+                        style={{ color: '#3f88bf', marginLeft: '-17px' }}
+                      >
+                        《开店规约》
+                      </span>
+                    </Col>
+                  </Row>,
                   <Row>
                     <Col {...colC} style={{ textAlign: 'center' }}>
                       <Button
@@ -806,8 +806,8 @@ export default class StoreApplySever extends React.PureComponent {
                         重新提交
                       </Button>
                     </Col>
-                  </Row>
-                )}
+                  </Row>,
+                ]}
               </div>
             </Form>
           </Card>

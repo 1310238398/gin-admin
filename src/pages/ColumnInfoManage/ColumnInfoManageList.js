@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
-import { Card, Form, Spin, Modal, Icon, Radio } from 'antd';
+import { Card, Form, Spin, Modal, Icon, Radio,Tooltip,Button } from 'antd';
 import PageHeaderLayout from '../../layouts/PageHeaderLayout';
 import { parseUtcTime } from '../../utils/utils';
 import { InfoStatus, InfoSearch, InfoTableList, InfoCard, NewButton } from '../../components/Info';
 import { ColumnEdit, ColumnCard } from '../../components/Column';
+import { ContentShow } from '@/components/ContentShow';
 // import InfoCard from './InfoCard';
 import UserShow from '../../components/UserShow';
 
@@ -387,6 +388,14 @@ export default class ColumnInfoManageList extends Component {
       {
         title: '标题',
         dataIndex: 'desc.title',
+        width: 220,
+        render: val => {
+          return (
+            <Tooltip placement="rightBottom" title={val}>
+              <Button style={{border:'0px'}}>{val}</Button>
+            </Tooltip>
+          );
+        },
         // width: 350,
         // render: (val, record) => {
         //   return <span onClick={() => this.onItemViewClick(record.info_id)}>{val}</span>;
@@ -395,7 +404,7 @@ export default class ColumnInfoManageList extends Component {
       {
         title: '状态',
         dataIndex: 'status.status',
-        // width: 120,
+        width: 120,
         render: val => {
           return <InfoStatus code={val} />;
         },
@@ -403,7 +412,7 @@ export default class ColumnInfoManageList extends Component {
       {
         title: '创建用户',
         dataIndex: 'operator.creator',
-        // width: 100,
+        width: 100,
         render: val => {
           return <UserShow uid={val} />;
         },
@@ -411,7 +420,7 @@ export default class ColumnInfoManageList extends Component {
       {
         title: '创建时间',
         dataIndex: 'operator.cre_time',
-        // width: 200,
+        width: 200,
         render: val => {
           return <span> {parseUtcTime(val)} </span>;
         },

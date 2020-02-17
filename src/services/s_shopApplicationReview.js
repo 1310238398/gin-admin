@@ -268,6 +268,14 @@ export default class StoreService {
     });
   }
 
+  // 设置推荐值
+   static async  RecommdValues(payload){
+    return request(`${baseUrlMall}/goods/recommend_num/${payload.payload.goods_id}/${payload.payload.recommend_num} `, {
+      method: 'PUT',
+      body: '',
+    });
+   }
+
   // 商品分类管理
   static async queryCommodityClassificationPageStore(params) {
     let paramStr = '';

@@ -144,7 +144,14 @@ export default class EnterpriseList extends PureComponent {
     this.clearSelectRows();
   };
 
-  handleTableSelectRow = (keys, rows) => {
+  handleTableSelectRow = (selectedRowKeys, selectedRows) => {
+    let keys = selectedRowKeys;
+    let rows = selectedRows;
+    if (selectedRowKeys.length > 1) {
+      keys = [selectedRowKeys[selectedRowKeys.length - 1]];
+      rows = [selectedRows[selectedRowKeys.length - 1]];
+    }
+
     this.setState({
       selectedRowKeys: keys,
       selectedRows: rows,
@@ -282,6 +289,42 @@ export default class EnterpriseList extends PureComponent {
   oncancelHotOKClick = data => {
     this.props.dispatch({
       type: 'enterprise/enterpriseCancelHot',
+      payload: data,
+    });
+    this.clearSelectRows();
+  };
+
+  onsetPrivacyClick = item => {
+    Modal.confirm({
+      title: `确定设立企业【${item.name}】为私密企业吗？`,
+      okText: '确认',
+      okType: 'danger',
+      cancelText: '取消',
+      onOk: this.onsetPrivacyOKClick.bind(this, item.record_id),
+    });
+  };
+
+  onsetPrivacyOKClick = data => {
+    this.props.dispatch({
+      type: 'enterprise/enterpriseSetPrivacy',
+      payload: data,
+    });
+    this.clearSelectRows();
+  };
+
+  oncancelPrivacyClick = item => {
+    Modal.confirm({
+      title: `确定取消私密企业【${item.name}】吗？`,
+      okText: '确认',
+      okType: 'danger',
+      cancelText: '取消',
+      onOk: this.oncancelPrivacyOKClick.bind(this, item.record_id),
+    });
+  };
+
+  oncancelPrivacyOKClick = data => {
+    this.props.dispatch({
+      type: 'enterprise/enterpriseCancelPrivacy',
       payload: data,
     });
     this.clearSelectRows();
@@ -454,15 +497,15 @@ export default class EnterpriseList extends PureComponent {
     } = this.props;
     const { selectedRowKeys, selectedRows } = this.state;
     const columns = [
-      {
-        title: '企业LOGO',
-        dataIndex: 'logo',
-        key: 'logo',
-        width: 150,
-        render: value => {
-          return <img src={value} alt="" style={{ width: 60, height: 60 }} />;
-        },
-      },
+      // {
+      //   title: '企业LOGO',
+      //   dataIndex: 'logo',
+      //   key: 'logo',
+      //   width: 150,
+      //   render: value => {
+      //     return <img src={value} alt="" style={{ width: 60, height: 60 }} />;
+      //   },
+      // },
       {
         title: '企业名称',
         dataIndex: 'name',
@@ -589,9 +632,15 @@ export default class EnterpriseList extends PureComponent {
           <div className={styles.tableList}>
             {this.renderSearchForm()}
             <div className={styles.tableListOperator}>
-              <Button icon="plus" type="primary" onClick={() => this.onAddClick()}>
+              <PButton
+                icon="plus"
+                type="primary"
+                key="add"
+                code="add"
+                onClick={() => this.onAddClick()}
+              >
                 新增企业
-              </Button>
+              </PButton>
               {selectedRows.length === 1 && [
                 <PButton
                   key="query"
@@ -658,6 +707,24 @@ export default class EnterpriseList extends PureComponent {
                     onClick={() => this.oncancelHotEnterClick(selectedRows[0])}
                   >
                     取消热门企业
+                  </PButton>
+                ),
+                selectedRows[0].is_privacy !== 1 && (
+                  <PButton
+                    key="setPrivacy"
+                    code="setPrivacy"
+                    onClick={() => this.onsetPrivacyClick(selectedRows[0])}
+                  >
+                    设为私密企业
+                  </PButton>
+                ),
+                selectedRows[0].is_privacy === 1 && (
+                  <PButton
+                    key="cancelPrivacy"
+                    code="cancelPrivacy"
+                    onClick={() => this.oncancelPrivacyClick(selectedRows[0])}
+                  >
+                    取消私密企业
                   </PButton>
                 ),
                 <PButton

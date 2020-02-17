@@ -78,9 +78,9 @@ export default class CommodityManagement extends React.PureComponent {
     });
   };
 
-  // 清空
+  // 重置
   onBtnClearClick = () => {
-    // 清空查询条件
+    // 重置查询条件
     this.props.form.resetFields();
     // 重新刷新查询列表
     const { store } = this.props.productModule;
@@ -370,7 +370,7 @@ export default class CommodityManagement extends React.PureComponent {
               查询
             </Button>
             <Button type="danger" className={styles.resetBtn} onClick={this.onBtnClearClick}>
-              清空
+            重置
             </Button>
           </Col>
         </Row>

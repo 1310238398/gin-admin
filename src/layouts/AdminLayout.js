@@ -334,21 +334,23 @@ class AdminLayout extends React.PureComponent {
                 onNoticeVisibleChange={this.handleNoticeVisibleChange}
                 {...this.props}
               />
-              <div
-                title="驾驶舱"
-                style={{
-                  display: 'flex',
-                  alignItems: 'flex-end',
-                  paddingBottom: 20,
-                  marginRight: 15,
-                  cursor: 'pointer',
-                }}
-                onClick={() => {
-                  this.handlCockpit('/cockpitm');
-                }}
-              >
-                <Icon type="fund" style={{ fontSize: 26 }} />
-              </div>
+              {user.real_name === '超级管理员' ? (
+                <div
+                  title="驾驶舱"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'flex-end',
+                    paddingBottom: 20,
+                    marginRight: 15,
+                    cursor: 'pointer',
+                  }}
+                  onClick={() => {
+                    this.handlCockpit('/cockpitm');
+                  }}
+                >
+                  <Icon type="fund" style={{ fontSize: 26 }} />
+                </div>
+              ) : null}
               {user.real_name ? (
                 <div>
                   <Dropdown overlay={menu}>

@@ -15,14 +15,14 @@ export async function get(params) {
 
 
 export async function update(params) {
-  return request(`${baseURL}/v1/${router}/${params.record_id}`, {
+  return request(`${baseURL}/v1/${router}/${params.record_id}/payment-status`, {
     method: 'PUT',
     body: params,
   });
 }
 
+
 export function download(params) {
-  debugger
     return `${baseURL}/v1/${router}/${params.id}/use-history/export?${stringify(params)}`;
   }
 

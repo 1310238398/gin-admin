@@ -1,6 +1,8 @@
 import { routerRedux } from 'dva/router';
 import { stringify, parse } from 'qs';
 import * as loginService from '@/services/login';
+import store from '@/utils/store';
+import { query } from '@/services/parklist';
 
 let isLogout = false;
 
@@ -64,6 +66,15 @@ export default {
         return;
       }
 
+      if (response.park_id) {
+        // 设定默认园区
+        store.setDefaultPark({
+          id: response.park_id,
+          name: response.park_name,
+          logo: response.park_logo,
+        });
+      }
+
       // 保存访问令牌
       yield put({
         type: 'changeSubmitting',
@@ -87,6 +98,8 @@ export default {
 
       const response = yield call(loginService.logout);
       if (response.status === 'OK') {
+        store.clearDefaultPark();
+
         yield put(
           routerRedux.push({
             pathname: '/user/login',

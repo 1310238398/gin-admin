@@ -16,27 +16,52 @@ export default class DicShowNew extends Component {
     }
   }
 
+  fetchAllName = (root, codes, pnames, cb) => {
+    if (!pnames) {
+      pnames = [];
+    }
+
+    if (!codes || codes.length === 0) {
+      cb(pnames);
+      return;
+    }
+
+    let v = codes[0];
+    if (root && root !== '') {
+      v = `${root}$#${v}`;
+    }
+
+    const ncodes = codes.slice(1);
+    const key = `dictionary_${v}`;
+    const vv = sessionStorage.getItem(key);
+    if (vv && vv !== '') {
+      pnames.push(vv);
+      this.fetchAllName(root, ncodes, pnames, cb);
+      return;
+    }
+
+    query({ q: 'code', code: `${v}` }).then(data => {
+      pnames.push(data.name);
+      sessionStorage.setItem(key, data.name);
+      this.fetchAllName(root, ncodes, pnames, cb);
+    });
+  };
+
   fetchName = () => {
     const { root, code } = this.props;
     if (!code || code === '') {
       return;
     }
 
-    let v = code;
-    if (root && root !== '') {
-      v = `${root}$#${v}`;
+    const codes = code.split('$#');
+    for (let i = 0; i < codes.length; i += 1) {
+      if (i > 0) {
+        codes[i] = `${codes[i - 1]}$#${codes[i]}`;
+      }
     }
 
-    const key = `dictionary_${v}`;
-    const vv = sessionStorage.getItem(key);
-    if (vv && vv !== '') {
-      this.setState({ name: vv });
-      return;
-    }
-
-    query({ q: 'code', code: `${v}` }).then(data => {
-      this.setState({ name: data.name });
-      sessionStorage.setItem(key, data.name);
+    this.fetchAllName(root, codes, [], names => {
+      this.setState({ name: names.join('/') });
     });
   };
 

@@ -132,18 +132,21 @@ export default {
     },
     *TxJE({ payload }, { call, put }) {
       const result = yield call(TxCash, payload);
-      yield put({
-        type: 'saveDWID',
-        payload: result.draw_id,
-      });
-      yield put({
-        type: 'visibleTX',
-        payload: false,
-      });
-      yield put({
-        type: 'showTX',
-        payload: true,
-      });
+      if(result.status==='ok'){
+        yield put({
+          type: 'saveDWID',
+          payload: result.draw_id,
+        });
+        yield put({
+          type: 'visibleTX',
+          payload: false,
+        });
+        yield put({
+          type: 'showTX',
+          payload: true,
+        });
+      }
+     
       // if (result === 'ok') {
       //   message.success('提现申请发起成功，将在15个工作日到账，请及时查询');
       // } else {

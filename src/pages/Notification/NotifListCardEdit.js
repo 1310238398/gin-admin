@@ -132,6 +132,7 @@ export default class NotifListCardEdit extends React.PureComponent {
   };
 
   renderItemName = (val, record) => {
+    debugger
     switch (record.bu_type) {
       case 1:
         return <EnterpriseShow value={val} />;
@@ -223,7 +224,9 @@ export default class NotifListCardEdit extends React.PureComponent {
         title: '通知对象',
         dataIndex: 'bu_id',
         key: 'bu_id',
-        render: this.renderItemName,
+        render: (val,item) => {
+          return <span>{this.renderItemName(val,item)}</span>;
+        },
       },
     ];
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, Card, Tabs } from 'antd';
-import PDF from 'react-pdf-js';
+// import PDF from 'react-pdf-js';
 import ProcessList from './ProcessList';
 import styles from './index.less';
 import styleq from './ProcessList.less';
@@ -159,11 +159,11 @@ export default class StageDialog extends React.Component {
             </Tabs.TabPane>
             <Tabs.TabPane tab="合同" key="2">
               <Card className="chart" style={{ marginLeft: '25px' }}>
-                <PDF
+                {/* <PDF
                   file="/assets/房屋租赁合同.pdf"
                   onDocumentComplete={this.onDocumentComplete}
                   page={this.state.page}
-                />
+                /> */}
                 {pagination}
               </Card>
             </Tabs.TabPane>

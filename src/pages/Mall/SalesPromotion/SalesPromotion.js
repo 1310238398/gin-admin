@@ -306,7 +306,7 @@ export default class SalesPromotion extends React.PureComponent {
               查询
             </Button>
             <Button type="danger" style={{ marginLeft: 8 }} onClick={this.onResetFormClick}>
-              清空
+              重置
             </Button>
           </Col>
         </Row>

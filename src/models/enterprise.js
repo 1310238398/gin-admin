@@ -15,6 +15,8 @@ import {
   enterpriseDele,
   enterpriseSetHot,
   enterpriseCancelHot,
+  enterpriseSetPrivacy,
+  enterpriseCancelPrivacy,
   enterpriseCretieOne,
   saveEnterpriseCretieData,
 } from '../services/enterprise';
@@ -323,6 +325,22 @@ export default {
     // 取消企业为热门企业
     *enterpriseCancelHot({ payload }, { call, put }) {
       const response = yield call(enterpriseCancelHot, payload);
+      if (response.status === 'OK') {
+        message.success('设置成功');
+        yield put({ type: 'fetch' });
+      }
+    },
+    // 设立企业为私密企业
+    *enterpriseSetPrivacy({ payload }, { call, put }) {
+      const response = yield call(enterpriseSetPrivacy, payload);
+      if (response.status === 'OK') {
+        message.success('设置成功');
+        yield put({ type: 'fetch' });
+      }
+    },
+    // 取消企业为私密企业
+    *enterpriseCancelPrivacy({ payload }, { call, put }) {
+      const response = yield call(enterpriseCancelPrivacy, payload);
       if (response.status === 'OK') {
         message.success('设置成功');
         yield put({ type: 'fetch' });

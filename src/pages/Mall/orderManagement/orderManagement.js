@@ -34,7 +34,7 @@ export default class orderManagement extends React.PureComponent {
   /* TAB */
   onMenuChange = item => {
     this.setState({ ...item });
-    /* 清空 */
+    /* 重置 */
     this.props.dispatch({
       type: 'orderManagementsj/saveSearch',
       payload: {},

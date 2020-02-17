@@ -27,6 +27,15 @@ export default class UserTypeShow extends PureComponent {
     });
   }
 
+
+
+  componentDidUpdate() {
+    if (this.value !== this.props.value) {
+      this.value = this.props.value;
+      this.functionList();
+    }
+  }
+
   findAndGetValue = (data, code) => {
     for (let i = 0; i < data.length; i += 1) {
       if (data[i].code === code) {
@@ -35,6 +44,17 @@ export default class UserTypeShow extends PureComponent {
     }
     return '';
   };
+
+
+  functionList() {
+    const { enterpriseID, code } = this.props;
+    const key = `${enterpriseID}_usertypes`;
+    queryEnterpriseUserType({ record_id: enterpriseID }).then(data => {
+      const list = data.list || [];
+      sessionStorage.setItem(key, JSON.stringify(list));
+      this.setState({ value: this.findAndGetValue(list, code) });
+    });
+  }
 
   render() {
     const { value } = this.state;

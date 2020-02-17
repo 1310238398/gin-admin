@@ -292,7 +292,16 @@ export default {
       // 给定初始值
       yield put({ type: 'changeSeeVisible', payload: visible });
     },
+    // 设置推荐值
+    *submitRecommdValues({ payload }, { call, put }) {
+      const response = yield call(StoreService.RecommdValues, { payload });
+      if (response.status === 'ok') {
+        message.success('设置成功');
+        yield put({ type: 'queryShopStatueTotalInfo' });
+      }
+    },
   },
+
   reducers: {
     setDistributionsstatue(state, { payload }) {
       if (isObjectNullOrUndefinedOrEmpty(payload)) {

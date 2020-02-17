@@ -32,7 +32,7 @@ export default class AuthCodeList extends PureComponent {
     const enterprise_id = this.props.location.query.record_id;
     this.props.dispatch({
       type: 'authCode/saveSearch',
-      payload: {},
+      payload: {enterprise_id},
     });
 
     this.props.dispatch({
@@ -72,8 +72,10 @@ export default class AuthCodeList extends PureComponent {
   };
 
   onTableChange = pagination => {
+    const enterprise_id = this.props.location.query.record_id;
     this.props.dispatch({
       type: 'authCode/fetch',
+      payload: { enterprise_id },
       pagination: {
         current: pagination.current,
         pageSize: pagination.pageSize,
@@ -94,7 +96,7 @@ export default class AuthCodeList extends PureComponent {
     const enterprise_id = this.props.location.query.record_id;
     this.props.dispatch({
       type: 'authCode/saveSearch',
-      payload: {},
+      payload: {enterprise_id},
     });
 
     this.props.dispatch({

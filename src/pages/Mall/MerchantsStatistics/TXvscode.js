@@ -17,17 +17,16 @@ export default class TXvscode extends PureComponent {
   //  默认的组件挂载时的初始化。
   async componentDidMount() {
     await StoreService.getStoreId().then(data => {
-        if (data[0]) {
-          const store = data[0];
-          this.setState({ storeId: store.store.store_id });
-        }
-      });
-    // 查询商家是否绑定手机号
-     this.props.dispatch({
-      type: 'merchantsStatistics/BindMobliNumber',
-      store:this.state.storeId,
+      if (data[0]) {
+        const store = data[0];
+        this.setState({ storeId: store.store.store_id });
+      }
     });
-    
+    // 查询商家是否绑定手机号
+    this.props.dispatch({
+      type: 'merchantsStatistics/BindMobliNumber',
+      store: this.state.storeId,
+    });
   }
 
   onSaveCallback = () => {
@@ -49,7 +48,7 @@ export default class TXvscode extends PureComponent {
 
   hqYzm() {
     const {
-      merchantsStatistics: { storePhone, dwID},
+      merchantsStatistics: { storePhone, dwID },
     } = this.props;
     const { storeId } = this.state;
     this.clickflag = true;
@@ -63,9 +62,9 @@ export default class TXvscode extends PureComponent {
     }, 1000);
     this.props.dispatch({
       type: 'merchantsStatistics/CFDX',
-      payload: { storePhone, storeId,dwID },
+      payload: { storePhone, storeId, dwID },
     });
-  }
+  };
 
   /**
    * 界面渲染
@@ -99,7 +98,7 @@ export default class TXvscode extends PureComponent {
       <Modal
         width={600}
         visible={visibleNext}
-        title="商家提现"
+        title="商家提现确认"
         destroyOnClose
         maskClosable={false}
         onCancel={this.props.onCancel}
@@ -110,7 +109,7 @@ export default class TXvscode extends PureComponent {
         <Card bordered={false}>
           <Form>
             <Form.Item {...formItemLayout} label="">
-              <Button onClick={clickflag ? this.hqYzm() : time_number + 's后重发'}>
+              <Button onClick={clickflag ?()=>this.hqYzm() : `${time_number} + s后重发`}>
                 发送验证码
               </Button>
             </Form.Item>

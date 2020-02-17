@@ -1,16 +1,32 @@
 import React from 'react';
 import { Drawer } from 'antd';
+import { query } from '@/services/parklist';
 import styles from './ParkSelect.less';
 import logo from '../assets/hyjg.png';
 
 class OpenParkLayout extends React.PureComponent {
   state = {
-    data: [{ name: '汉峪金谷', logo: '' }, { name: '创新谷', logo: '' }],
+    data: [],
+  };
+
+  componentDidMount() {
+    query({ q: 'select' }).then(res => {
+      const data = res.list || [];
+      this.setState({ data });
+    });
+  }
+
+  handleSelect = item => {
+    const { onSelect } = this.props;
+    if (onSelect) {
+      onSelect(item);
+    }
   };
 
   render() {
     const { collapsed, inOpenParkState, inclose } = this.props;
     const { data } = this.state;
+
     return (
       <div>
         {inOpenParkState && (
@@ -24,14 +40,18 @@ class OpenParkLayout extends React.PureComponent {
           >
             {data &&
               data.map(item => (
-                <div key={item} className={styles.drawerContent}>
+                <div
+                  key={item.record_id}
+                  className={styles.drawerContent}
+                  onClick={() => {
+                    this.handleSelect(item);
+                  }}
+                >
                   <div>
-                    <img src={logo} alt="logo" />
+                    <img src={item.logo ? item.logo : logo} alt="logo" />
                   </div>
-
                   <div className={styles.rightContent}>
                     <p className={styles.name}>{item.name}</p>
-                    <p className={styles.area}>230万㎡</p>
                   </div>
                 </div>
               ))}

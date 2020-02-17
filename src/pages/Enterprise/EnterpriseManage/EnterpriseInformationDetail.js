@@ -142,7 +142,7 @@ export default class EnterpriseInformationDetail extends PureComponent {
                 企业邮箱：
                 {formData.zip_code}
               </span>
-              <span>
+              {/* <span>
                 入驻园区地址：
                 {formData.buildings &&
                   formData.buildings.map(item => {
@@ -152,7 +152,7 @@ export default class EnterpriseInformationDetail extends PureComponent {
                       </Tag>
                     );
                   })}
-              </span>
+              </span> */}
               {/* <span>
                 企业简介：
                 {formData.memo}
@@ -160,6 +160,18 @@ export default class EnterpriseInformationDetail extends PureComponent {
             </div>
           </div>
           <div className={styles.form} style={{ marginTop: 25 }}>
+            <DescriptionList title="" size="large" col={1} style={{ marginBottom: 32 }}>
+              <Description term="入驻园区地址">
+                {formData.buildings &&
+                  formData.buildings.map(item => {
+                    return (
+                      <Tag>
+                        {item.building_name} {this.renderBuildingType(item.incoming_type)}
+                      </Tag>
+                    );
+                  })}
+              </Description>
+            </DescriptionList>
             <DescriptionList title="" size="large" col={3} style={{ marginBottom: 32 }}>
               <Description term="行业类别">
                 {

@@ -19,12 +19,25 @@ export function _onCreate() {
   (runtimeDva.plugins || []).forEach(plugin => {
     app.use(plugin);
   });
-  
-  app.model({ namespace: 'building', ...(require('D:/workspace/ant-smartpark-web/src/models/building.js').default) });
+  app.use(require('D:/workspace/ant-smartpark-web/node_modules/dva-immer/dist/index.js')());
+  app.model({ namespace: 'advertisCreativeGroup', ...(require('D:/workspace/ant-smartpark-web/src/models/advertisCreativeGroup.js').default) });
+app.model({ namespace: 'advertiser', ...(require('D:/workspace/ant-smartpark-web/src/models/advertiser.js').default) });
+app.model({ namespace: 'advertisPromotion', ...(require('D:/workspace/ant-smartpark-web/src/models/advertisPromotion.js').default) });
+app.model({ namespace: 'advertisRelease', ...(require('D:/workspace/ant-smartpark-web/src/models/advertisRelease.js').default) });
+app.model({ namespace: 'advertisReview', ...(require('D:/workspace/ant-smartpark-web/src/models/advertisReview.js').default) });
+app.model({ namespace: 'advertisSetting', ...(require('D:/workspace/ant-smartpark-web/src/models/advertisSetting.js').default) });
+app.model({ namespace: 'advertposition', ...(require('D:/workspace/ant-smartpark-web/src/models/advertposition.js').default) });
+app.model({ namespace: 'agent', ...(require('D:/workspace/ant-smartpark-web/src/models/agent.js').default) });
+app.model({ namespace: 'buildconstru', ...(require('D:/workspace/ant-smartpark-web/src/models/buildconstru.js').default) });
+app.model({ namespace: 'building', ...(require('D:/workspace/ant-smartpark-web/src/models/building.js').default) });
+app.model({ namespace: 'coupon', ...(require('D:/workspace/ant-smartpark-web/src/models/coupon.js').default) });
+app.model({ namespace: 'dailyHealth', ...(require('D:/workspace/ant-smartpark-web/src/models/dailyHealth.js').default) });
 app.model({ namespace: 'demo', ...(require('D:/workspace/ant-smartpark-web/src/models/demo.js').default) });
 app.model({ namespace: 'electricPowderDetail', ...(require('D:/workspace/ant-smartpark-web/src/models/electricPowderDetail.js').default) });
 app.model({ namespace: 'enterprise', ...(require('D:/workspace/ant-smartpark-web/src/models/enterprise.js').default) });
 app.model({ namespace: 'enterpriseAudit', ...(require('D:/workspace/ant-smartpark-web/src/models/enterpriseAudit.js').default) });
+app.model({ namespace: 'epidemicemployeeInfo', ...(require('D:/workspace/ant-smartpark-web/src/models/epidemicemployeeInfo.js').default) });
+app.model({ namespace: 'faceEntry', ...(require('D:/workspace/ant-smartpark-web/src/models/faceEntry.js').default) });
 app.model({ namespace: 'global', ...(require('D:/workspace/ant-smartpark-web/src/models/global.js').default) });
 app.model({ namespace: 'login', ...(require('D:/workspace/ant-smartpark-web/src/models/login.js').default) });
 app.model({ namespace: 'm_authCode', ...(require('D:/workspace/ant-smartpark-web/src/models/m_authCode.js').default) });
@@ -66,6 +79,10 @@ app.model({ namespace: 'monitorShow', ...(require('D:/workspace/ant-smartpark-we
 app.model({ namespace: 'notifList', ...(require('D:/workspace/ant-smartpark-web/src/models/notifList.js').default) });
 app.model({ namespace: 'parklist', ...(require('D:/workspace/ant-smartpark-web/src/models/parklist.js').default) });
 app.model({ namespace: 'personnel', ...(require('D:/workspace/ant-smartpark-web/src/models/personnel.js').default) });
+app.model({ namespace: 'propertyAuthority', ...(require('D:/workspace/ant-smartpark-web/src/models/propertyAuthority.js').default) });
+app.model({ namespace: 'qualification', ...(require('D:/workspace/ant-smartpark-web/src/models/qualification.js').default) });
+app.model({ namespace: 'shopMallStore', ...(require('D:/workspace/ant-smartpark-web/src/models/shopMallStore.js').default) });
+app.model({ namespace: 'statisticsEnterprisesList', ...(require('D:/workspace/ant-smartpark-web/src/models/statisticsEnterprisesList.js').default) });
   return app;
 }
 

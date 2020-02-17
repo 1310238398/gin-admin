@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'umi/link';
+import store from '@/utils/store';
 import styles from './ParkSelect.less';
 import OpenParkLayout from './OpenParkLayout';
 import logo from '../assets/hyjg.png';
@@ -21,16 +22,23 @@ class ParkSelect extends React.PureComponent {
     });
   };
 
+  onSelect = item => {
+    store.setDefaultPark({ id: item.record_id, name: item.name, logo: item.logo });
+    this.setState({
+      OpenParkState: false,
+    });
+    window.location.reload(true);
+  };
+
   render() {
     const { incollapsed } = this.props;
     const { OpenParkState } = this.state;
+    const parkItem = store.getDefaultPark();
     return (
       <div>
-        <div className={styles.logo}>
-          <Link to="/">
-            <img src={logo} alt="logo" />
-            {!incollapsed ? <h1>汉峪金谷</h1> : null}
-          </Link>
+        <div className={styles.logo} onClick={this.onOpenpark}>
+          <img src={parkItem.logo ? parkItem.logo : logo} alt="logo" />
+          {!incollapsed ? <h1>{parkItem.name}</h1> : null}
         </div>
         {/*
         <div className={styles.logo} onClick={this.onOpenpark}>
@@ -46,6 +54,7 @@ class ParkSelect extends React.PureComponent {
           collapsed={incollapsed}
           inOpenParkState={OpenParkState}
           inclose={this.onClose}
+          onSelect={this.onSelect}
         />
       </div>
     );

@@ -125,7 +125,7 @@ export default class BusinessBindingMobile extends PureComponent {
                   </Form.Item>
                 </Col>
                 <Col {...col}>
-                  <Button onClick={() => this.hqYzm()}>发送验证码</Button>
+                  <Button onClick={clickflag ? ()=>this.hqYzm() : `${time_number} + s后重发`}>发送验证码</Button>
                 </Col>
               </Row>
               <Row>

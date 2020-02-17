@@ -14,8 +14,8 @@ const routes = [
     "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../../layouts/UserLayout'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__UserLayout" */'../../layouts/UserLayout'),
+      
     })
     : require('../../layouts/UserLayout').default,
     "routes": [
@@ -29,8 +29,8 @@ const routes = [
         "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Login/Index'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "p__Login__Index" */'../Login/Index'),
+      
     })
     : require('../Login/Index').default,
         "exact": true
@@ -45,8 +45,8 @@ const routes = [
     "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../../layouts/ModalLayout'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__ModalLayout" */'../../layouts/ModalLayout'),
+      
     })
     : require('../../layouts/ModalLayout').default,
     "routes": [
@@ -55,8 +55,8 @@ const routes = [
         "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Cockpit/CockpitM'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "p__Cockpit__CockpitM" */'../Cockpit/CockpitM'),
+      
     })
     : require('../Cockpit/CockpitM').default,
         "exact": true
@@ -66,8 +66,8 @@ const routes = [
         "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../ParkEnergyConsumption/ParkEnergyConsumption'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "p__ParkEnergyConsumption__ParkEnergyConsumption" */'../ParkEnergyConsumption/ParkEnergyConsumption'),
+      
     })
     : require('../ParkEnergyConsumption/ParkEnergyConsumption').default,
         "exact": true
@@ -77,8 +77,8 @@ const routes = [
         "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Cockpit/YQJingYing'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "p__Cockpit__YQJingYing" */'../Cockpit/YQJingYing'),
+      
     })
     : require('../Cockpit/YQJingYing').default,
         "exact": true
@@ -88,8 +88,8 @@ const routes = [
         "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Cockpit/CLLMonitor'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "p__Cockpit__CLLMonitor" */'../Cockpit/CLLMonitor'),
+      
     })
     : require('../Cockpit/CLLMonitor').default,
         "exact": true
@@ -99,8 +99,8 @@ const routes = [
         "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../ParkOverview/StatisticsHumanData'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "p__ParkOverview__StatisticsHumanData" */'../ParkOverview/StatisticsHumanData'),
+      
     })
     : require('../ParkOverview/StatisticsHumanData').default,
         "exact": true
@@ -110,8 +110,8 @@ const routes = [
         "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Cockpit/VideoMonitor'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "p__Cockpit__VideoMonitor" */'../Cockpit/VideoMonitor'),
+      
     })
     : require('../Cockpit/VideoMonitor').default,
         "routes": [
@@ -125,8 +125,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Cockpit/TKMonitor'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "p__Cockpit__VideoMonitor" */'../Cockpit/TKMonitor'),
+      
     })
     : require('../Cockpit/TKMonitor').default,
             "exact": true
@@ -136,8 +136,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Cockpit/LKMonitor'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "p__Cockpit__VideoMonitor" */'../Cockpit/LKMonitor'),
+      
     })
     : require('../Cockpit/LKMonitor').default,
             "exact": true
@@ -147,8 +147,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Cockpit/SQMonitor'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "p__Cockpit__VideoMonitor" */'../Cockpit/SQMonitor'),
+      
     })
     : require('../Cockpit/SQMonitor').default,
             "exact": true
@@ -163,8 +163,8 @@ const routes = [
         "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Cockpit/ZSProcess'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "p__Cockpit__ZSProcess" */'../Cockpit/ZSProcess'),
+      
     })
     : require('../Cockpit/ZSProcess').default,
         "routes": [
@@ -178,8 +178,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../PrecisionInvestment/PrecisionInvestmentNew'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "p__Cockpit__ZSProcess" */'../PrecisionInvestment/PrecisionInvestmentNew'),
+      
     })
     : require('../PrecisionInvestment/PrecisionInvestmentNew').default,
             "exact": true
@@ -189,8 +189,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Cockpit/ZSProcess/Process'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "p__Cockpit__ZSProcess" */'../Cockpit/ZSProcess/Process'),
+      
     })
     : require('../Cockpit/ZSProcess/Process').default,
             "exact": true
@@ -200,8 +200,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../CompanyEnter'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "p__Cockpit__ZSProcess" */'../CompanyEnter'),
+      
     })
     : require('../CompanyEnter').default,
             "exact": true
@@ -212,12 +212,27 @@ const routes = [
         ]
       },
       {
-        "path": "/cockpitm/parkview",
+        "component": () => React.createElement(require('D:/workspace/ant-smartpark-web/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+      }
+    ]
+  },
+  {
+    "path": "/building/building",
+    "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../../layouts/AdminLayout'),
+      
+    })
+    : require('../../layouts/AdminLayout').default,
+    "routes": [
+      {
+        "path": "/building/building",
         "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Building/Building'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "p__Building__Building" */'../Building/Building'),
+      
     })
     : require('../Building/Building').default,
         "exact": true
@@ -232,8 +247,8 @@ const routes = [
     "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../../layouts/AdminLayout'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../../layouts/AdminLayout'),
+      
     })
     : require('../../layouts/AdminLayout').default,
     "routes": [
@@ -247,8 +262,8 @@ const routes = [
         "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Dashboard/Home'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "p__Dashboard__Home" */'../Dashboard/Home'),
+      
     })
     : require('../Dashboard/Home').default,
         "exact": true
@@ -261,8 +276,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Demo/DemoList'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Demo/DemoList'),
+      
     })
     : require('../Demo/DemoList').default,
             "exact": true
@@ -280,8 +295,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../ParkListContent/ParkListContent'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../ParkListContent/ParkListContent'),
+      
     })
     : require('../ParkListContent/ParkListContent').default,
             "exact": true
@@ -295,34 +310,12 @@ const routes = [
         "path": "/building",
         "routes": [
           {
-            "path": "/building/building",
-            "component": __IS_BROWSER
-    ? _dvaDynamic({
-      
-      component: () => import('../Building/Building'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
-    })
-    : require('../Building/Building').default,
-            "exact": true
-          },
-          {
-            "path": "/building/building2",
-            "component": __IS_BROWSER
-    ? _dvaDynamic({
-      
-      component: () => import('../Building/ParkView'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
-    })
-    : require('../Building/ParkView').default,
-            "exact": true
-          },
-          {
             "path": "/building/floorframe/:id",
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Building/FloorFrame/FloorFrame'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Building/FloorFrame/FloorFrame'),
+      
     })
     : require('../Building/FloorFrame/FloorFrame').default,
             "exact": true
@@ -332,8 +325,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Building/HousingQuery/HousingQuery'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Building/HousingQuery/HousingQuery'),
+      
     })
     : require('../Building/HousingQuery/HousingQuery').default,
             "exact": true
@@ -343,8 +336,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Building/ParkStatistics/ParkStatistics'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Building/ParkStatistics/ParkStatistics'),
+      
     })
     : require('../Building/ParkStatistics/ParkStatistics').default,
             "exact": true
@@ -362,8 +355,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Building/Device/Gate'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Building/Device/Gate'),
+      
     })
     : require('../Building/Device/Gate').default,
             "exact": true
@@ -373,8 +366,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Building/Device/ElectricMeters'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Building/Device/ElectricMeters'),
+      
     })
     : require('../Building/Device/ElectricMeters').default,
             "exact": true
@@ -384,8 +377,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Building/Device/VideoEquipment'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Building/Device/VideoEquipment'),
+      
     })
     : require('../Building/Device/VideoEquipment').default,
             "exact": true
@@ -395,8 +388,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Building/Device/MonitorShow/List'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Building/Device/MonitorShow/List'),
+      
     })
     : require('../Building/Device/MonitorShow/List').default,
             "exact": true
@@ -406,8 +399,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Building/Device/MonitorShow/List'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Building/Device/MonitorShow/List'),
+      
     })
     : require('../Building/Device/MonitorShow/List').default,
             "exact": true
@@ -417,8 +410,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Building/Device/VideoThirdSystem'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Building/Device/VideoThirdSystem'),
+      
     })
     : require('../Building/Device/VideoThirdSystem').default,
             "exact": true
@@ -436,8 +429,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Finance/ElectricRecharge'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Finance/ElectricRecharge'),
+      
     })
     : require('../Finance/ElectricRecharge').default,
             "exact": true
@@ -447,8 +440,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Finance/ElectricRechargeDetail'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Finance/ElectricRechargeDetail'),
+      
     })
     : require('../Finance/ElectricRechargeDetail').default,
             "exact": true
@@ -458,8 +451,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Finance/ElectricRechargeDetailAbnormal'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Finance/ElectricRechargeDetailAbnormal'),
+      
     })
     : require('../Finance/ElectricRechargeDetailAbnormal').default,
             "exact": true
@@ -469,8 +462,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Finance/InvoicePayable'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Finance/InvoicePayable'),
+      
     })
     : require('../Finance/InvoicePayable').default,
             "exact": true
@@ -480,8 +473,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Finance/InvoicesManagement'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Finance/InvoicesManagement'),
+      
     })
     : require('../Finance/InvoicesManagement').default,
             "exact": true
@@ -499,8 +492,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Mall/StoreManage'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/StoreManage'),
+      
     })
     : require('../Mall/StoreManage').default,
             "exact": true
@@ -510,8 +503,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Mall/CommodityManagement'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/CommodityManagement'),
+      
     })
     : require('../Mall/CommodityManagement').default,
             "exact": true
@@ -521,8 +514,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Mall/CommodityClassificationManagement'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/CommodityClassificationManagement'),
+      
     })
     : require('../Mall/CommodityClassificationManagement').default,
             "exact": true
@@ -532,8 +525,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Mall/ShopApplicationReview'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/ShopApplicationReview'),
+      
     })
     : require('../Mall/ShopApplicationReview').default,
             "exact": true
@@ -543,8 +536,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Mall/ShopChangeAudit'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/ShopChangeAudit'),
+      
     })
     : require('../Mall/ShopChangeAudit').default,
             "exact": true
@@ -554,8 +547,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Mall/OrderManagement'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/OrderManagement'),
+      
     })
     : require('../Mall/OrderManagement').default,
             "exact": true
@@ -565,8 +558,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Mall/HomeRecommendedMerchandiseManagement'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/HomeRecommendedMerchandiseManagement'),
+      
     })
     : require('../Mall/HomeRecommendedMerchandiseManagement').default,
             "exact": true
@@ -576,8 +569,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Mall/HomePageGroupingManagement'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/HomePageGroupingManagement'),
+      
     })
     : require('../Mall/HomePageGroupingManagement').default,
             "exact": true
@@ -587,8 +580,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Mall/Store/StoreApply'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/Store/StoreApply'),
+      
     })
     : require('../Mall/Store/StoreApply').default,
             "exact": true
@@ -598,8 +591,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Mall/Store/BasicInfo'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/Store/BasicInfo'),
+      
     })
     : require('../Mall/Store/BasicInfo').default,
             "exact": true
@@ -609,8 +602,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Mall/Store/StoreChange'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/Store/StoreChange'),
+      
     })
     : require('../Mall/Store/StoreChange').default,
             "exact": true
@@ -620,8 +613,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Mall/ProductManagement/CommodityManagement'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/ProductManagement/CommodityManagement'),
+      
     })
     : require('../Mall/ProductManagement/CommodityManagement').default,
             "exact": true
@@ -632,8 +625,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Mall/orderManagement/orderManagement'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/orderManagement/orderManagement'),
+      
     })
     : require('../Mall/orderManagement/orderManagement').default,
             "exact": true
@@ -644,8 +637,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Mall/SalesPromotion/SalesPromotion'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/SalesPromotion/SalesPromotion'),
+      
     })
     : require('../Mall/SalesPromotion/SalesPromotion').default,
             "exact": true
@@ -656,8 +649,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Mall/MerchantsStatistics/MerchantsStatistics'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/MerchantsStatistics/MerchantsStatistics'),
+      
     })
     : require('../Mall/MerchantsStatistics/MerchantsStatistics').default,
             "exact": true
@@ -668,10 +661,34 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Mall/BusinessBindingMobile/BusinessBindingMobile'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/BusinessBindingMobile/BusinessBindingMobile'),
+      
     })
     : require('../Mall/BusinessBindingMobile/BusinessBindingMobile').default,
+            "exact": true
+          },
+          {
+            "path": "/malls/generalsetting",
+            "name": "通用设置",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/Store/GeneralSetting'),
+      
+    })
+    : require('../Mall/Store/GeneralSetting').default,
+            "exact": true
+          },
+          {
+            "path": "/malls/shoplist",
+            "name": "店铺列表",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Mall/Store/ShopList'),
+      
+    })
+    : require('../Mall/Store/ShopList').default,
             "exact": true
           },
           {
@@ -687,8 +704,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Enterprise/EnterpriseAudit/EnterpriseAudit'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Enterprise/EnterpriseAudit/EnterpriseAudit'),
+      
     })
     : require('../Enterprise/EnterpriseAudit/EnterpriseAudit').default,
             "exact": true
@@ -698,8 +715,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Enterprise/EnterpriseInfo/EnterpriseInfo'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Enterprise/EnterpriseInfo/EnterpriseInfo'),
+      
     })
     : require('../Enterprise/EnterpriseInfo/EnterpriseInfo').default,
             "exact": true
@@ -709,8 +726,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Enterprise/EnterpriseEdit/EnterpriseEdit'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Enterprise/EnterpriseEdit/EnterpriseEdit'),
+      
     })
     : require('../Enterprise/EnterpriseEdit/EnterpriseEdit').default,
             "exact": true
@@ -720,8 +737,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Enterprise/EnterpriseApply/EnterpriseApply'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Enterprise/EnterpriseApply/EnterpriseApply'),
+      
     })
     : require('../Enterprise/EnterpriseApply/EnterpriseApply').default,
             "exact": true
@@ -731,8 +748,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Enterprise/EnterpriseDepartment/EnterpriseDepartment'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Enterprise/EnterpriseDepartment/EnterpriseDepartment'),
+      
     })
     : require('../Enterprise/EnterpriseDepartment/EnterpriseDepartment').default,
             "exact": true
@@ -742,8 +759,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Enterprise/AuthCode/AuthCodeList'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Enterprise/AuthCode/AuthCodeList'),
+      
     })
     : require('../Enterprise/AuthCode/AuthCodeList').default,
             "exact": true
@@ -753,8 +770,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Enterprise/EnterpriseManage/EnterpriseList'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Enterprise/EnterpriseManage/EnterpriseList'),
+      
     })
     : require('../Enterprise/EnterpriseManage/EnterpriseList').default,
             "exact": true
@@ -764,8 +781,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Enterprise/TechnicalTransaction'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Enterprise/TechnicalTransaction'),
+      
     })
     : require('../Enterprise/TechnicalTransaction').default,
             "exact": true
@@ -775,8 +792,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Enterprise/EnterpriseMeter'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Enterprise/EnterpriseMeter'),
+      
     })
     : require('../Enterprise/EnterpriseMeter').default,
             "exact": true
@@ -796,8 +813,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Interaction/InteractionType'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Interaction/InteractionType'),
+      
     })
     : require('../Interaction/InteractionType').default,
             "exact": true
@@ -808,8 +825,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../ColumnManage/ColumnManageList'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../ColumnManage/ColumnManageList'),
+      
     })
     : require('../ColumnManage/ColumnManageList').default,
             "exact": true
@@ -820,8 +837,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../InfoManage/InfoManageList'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../InfoManage/InfoManageList'),
+      
     })
     : require('../InfoManage/InfoManageList').default,
             "exact": true
@@ -836,8 +853,8 @@ const routes = [
                 "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../GroupManage/GroupManageList'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../GroupManage/GroupManageList'),
+      
     })
     : require('../GroupManage/GroupManageList').default,
                 "exact": true
@@ -848,8 +865,8 @@ const routes = [
                 "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../GroupManage/GroupInfoManageList'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../GroupManage/GroupInfoManageList'),
+      
     })
     : require('../GroupManage/GroupInfoManageList').default,
                 "exact": true
@@ -870,8 +887,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../ZsxxManage/ZsxxManageList'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../ZsxxManage/ZsxxManageList'),
+      
     })
     : require('../ZsxxManage/ZsxxManageList').default,
             "exact": true
@@ -882,8 +899,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../ColumnInfoManage/ColumnInfoManageList'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../ColumnInfoManage/ColumnInfoManageList'),
+      
     })
     : require('../ColumnInfoManage/ColumnInfoManageList').default,
             "exact": true
@@ -894,8 +911,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../ColumnInfoManage/ColumnInfoManageList'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../ColumnInfoManage/ColumnInfoManageList'),
+      
     })
     : require('../ColumnInfoManage/ColumnInfoManageList').default,
             "exact": true
@@ -906,8 +923,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Board/BoardMain'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Board/BoardMain'),
+      
     })
     : require('../Board/BoardMain').default,
             "exact": true
@@ -918,8 +935,8 @@ const routes = [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Feedback/FeedbackManage'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Feedback/FeedbackManage'),
+      
     })
     : require('../Feedback/FeedbackManage').default,
             "exact": true
@@ -931,10 +948,10 @@ const routes = [
     ? _dvaDynamic({
       app: require('@tmp/dva').getApp(),
 models: () => [
-  import('D:/workspace/ant-smartpark-web/src/pages/ReportManage/models/m_target.js').then(m => { return { namespace: 'm_target',...m.default}})
+  import(/* webpackChunkName: 'p__ReportManage__models__m_target.js' */'D:/workspace/ant-smartpark-web/src/pages/ReportManage/models/m_target.js').then(m => { return { namespace: 'm_target',...m.default}})
 ],
-      component: () => import('../ReportManage/ReportManage'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../ReportManage/ReportManage'),
+      
     })
     : require('../ReportManage/ReportManage').default,
             "exact": true
@@ -954,8 +971,8 @@ models: () => [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../LeaseAudit/LeaseAuditList'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../LeaseAudit/LeaseAuditList'),
+      
     })
     : require('../LeaseAudit/LeaseAuditList').default,
             "exact": true
@@ -975,8 +992,8 @@ models: () => [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../NoticeRelease/NoticeRelease'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../NoticeRelease/NoticeRelease'),
+      
     })
     : require('../NoticeRelease/NoticeRelease').default,
             "exact": true
@@ -987,8 +1004,8 @@ models: () => [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Notification/NotifList'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Notification/NotifList'),
+      
     })
     : require('../Notification/NotifList').default,
             "exact": true
@@ -1006,8 +1023,8 @@ models: () => [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Personnel/PersonnelInfo'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Personnel/PersonnelInfo'),
+      
     })
     : require('../Personnel/PersonnelInfo').default,
             "exact": true
@@ -1017,8 +1034,8 @@ models: () => [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Personnel/PersonnelInfoEdit'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Personnel/PersonnelInfoEdit'),
+      
     })
     : require('../Personnel/PersonnelInfoEdit').default,
             "exact": true
@@ -1028,8 +1045,8 @@ models: () => [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../Personnel/PersonnelList'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Personnel/PersonnelList'),
+      
     })
     : require('../Personnel/PersonnelList').default,
             "exact": true
@@ -1047,8 +1064,8 @@ models: () => [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../ElectricityFee/ElectricityFeeList'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../ElectricityFee/ElectricityFeeList'),
+      
     })
     : require('../ElectricityFee/ElectricityFeeList').default,
             "exact": true
@@ -1058,10 +1075,347 @@ models: () => [
             "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../ElectricityFee/PowderDetail'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../ElectricityFee/PowderDetail'),
+      
     })
     : require('../ElectricityFee/PowderDetail').default,
+            "exact": true
+          },
+          {
+            "path": "/electricityfee/propertyauthority",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../PropertyAuthorityManag/List'),
+      
+    })
+    : require('../PropertyAuthorityManag/List').default,
+            "exact": true
+          },
+          {
+            "path": "/electricityfee/paytext",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../PayText/PayText'),
+      
+    })
+    : require('../PayText/PayText').default,
+            "exact": true
+          },
+          {
+            "component": () => React.createElement(require('D:/workspace/ant-smartpark-web/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+          }
+        ]
+      },
+      {
+        "path": "/shopmall",
+        "routes": [
+          {
+            "path": "/shopmall/shopmanage",
+            "name": "商铺管理",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../ShopMall/MallOperation/ShopManage/List'),
+      
+    })
+    : require('../ShopMall/MallOperation/ShopManage/List').default,
+            "exact": true
+          },
+          {
+            "path": "/shopmall/shopexaminelist",
+            "name": "商铺审核",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../ShopMall/MallOperation/ShopExamine/List'),
+      
+    })
+    : require('../ShopMall/MallOperation/ShopExamine/List').default,
+            "exact": true
+          },
+          {
+            "path": "/shopmall/shopcurrentinfo",
+            "name": "商铺基本信息维护",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../ShopMall/MallOperation/ShopManage/CurrentInfo'),
+      
+    })
+    : require('../ShopMall/MallOperation/ShopManage/CurrentInfo').default,
+            "exact": true
+          },
+          {
+            "component": () => React.createElement(require('D:/workspace/ant-smartpark-web/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+          }
+        ]
+      },
+      {
+        "path": "/coupon",
+        "routes": [
+          {
+            "path": "/coupon/couponseller/list",
+            "name": "优惠券管理",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Coupon/CouponSeller/CouponList'),
+      
+    })
+    : require('../Coupon/CouponSeller/CouponList').default,
+            "exact": true
+          },
+          {
+            "path": "/coupon/couponseller/refundlist",
+            "name": "退券审核管理",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Coupon/CouponSeller/RefundList'),
+      
+    })
+    : require('../Coupon/CouponSeller/RefundList').default,
+            "exact": true
+          },
+          {
+            "path": "/coupon/couponseller/couponexaminelist",
+            "name": "优惠券审核管理",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Coupon/CouponSeller/CouponExamine'),
+      
+    })
+    : require('../Coupon/CouponSeller/CouponExamine').default,
+            "exact": true
+          },
+          {
+            "path": "/coupon/couponseller/purchaseorderlist",
+            "name": "优惠券购买订单查询",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Coupon/CouponSeller/Order/PurchaseOrder'),
+      
+    })
+    : require('../Coupon/CouponSeller/Order/PurchaseOrder').default,
+            "exact": true
+          },
+          {
+            "path": "/coupon/couponseller/paymentorderlist",
+            "name": "支付订单查询",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Coupon/CouponSeller/Order/PaymentOrder'),
+      
+    })
+    : require('../Coupon/CouponSeller/Order/PaymentOrder').default,
+            "exact": true
+          },
+          {
+            "path": "/coupon/couponseller/refundorderlist",
+            "name": "退券订单查询",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Coupon/CouponSeller/Order/RefundOrder'),
+      
+    })
+    : require('../Coupon/CouponSeller/Order/RefundOrder').default,
+            "exact": true
+          },
+          {
+            "component": () => React.createElement(require('D:/workspace/ant-smartpark-web/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+          }
+        ]
+      },
+      {
+        "path": "/advertis",
+        "routes": [
+          {
+            "path": "/advertis/agent/list",
+            "name": "代理商管理",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Advertisment/Agent/List'),
+      
+    })
+    : require('../Advertisment/Agent/List').default,
+            "exact": true
+          },
+          {
+            "path": "/advertis/advertiser/list",
+            "name": "广告主管理",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Advertisment/Advertiser/List'),
+      
+    })
+    : require('../Advertisment/Advertiser/List').default,
+            "exact": true
+          },
+          {
+            "path": "/advertis/advertiscreativegroup/list",
+            "name": "广告创意组管理",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Advertisment/AdvertisCreativeGroup/List'),
+      
+    })
+    : require('../Advertisment/AdvertisCreativeGroup/List').default,
+            "exact": true
+          },
+          {
+            "path": "/advertis/advertispromotion/list",
+            "name": "广告投放管理",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Advertisment/AdvertisPromotion/List'),
+      
+    })
+    : require('../Advertisment/AdvertisPromotion/List').default,
+            "exact": true
+          },
+          {
+            "path": "/advertis/advertisreview/list",
+            "name": "广告推广审核管理",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Advertisment/AdvertisReview/List'),
+      
+    })
+    : require('../Advertisment/AdvertisReview/List').default,
+            "exact": true
+          },
+          {
+            "path": "/advertis/advertposition/list",
+            "name": "广告位管理",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Advertisment/AdvertPosition/List'),
+      
+    })
+    : require('../Advertisment/AdvertPosition/List').default,
+            "exact": true
+          },
+          {
+            "path": "/advertis/advertisreleaseList/list",
+            "name": "广告推广发布管理",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Advertisment/AdvertisRelease/AdvertisRelease'),
+      
+    })
+    : require('../Advertisment/AdvertisRelease/AdvertisRelease').default,
+            "exact": true
+          },
+          {
+            "path": "/advertis/advertissetting/list",
+            "name": "广告推广设置",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Advertisment/AdvertisSetting/AdvertisSetting'),
+      
+    })
+    : require('../Advertisment/AdvertisSetting/AdvertisSetting').default,
+            "exact": true
+          },
+          {
+            "component": () => React.createElement(require('D:/workspace/ant-smartpark-web/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+          }
+        ]
+      },
+      {
+        "path": "/buildconstru",
+        "name": "建筑管理",
+        "routes": [
+          {
+            "path": "/buildconstru",
+            "name": "建筑管理",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../BuildConstru/BuildConstruList'),
+      
+    })
+    : require('../BuildConstru/BuildConstruList').default,
+            "exact": true
+          },
+          {
+            "component": () => React.createElement(require('D:/workspace/ant-smartpark-web/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+          }
+        ]
+      },
+      {
+        "path": "/facedata",
+        "name": "平台用户管理",
+        "routes": [
+          {
+            "path": "/facedata",
+            "name": "平台用户管理",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../FaceEntry/FaceEntry'),
+      
+    })
+    : require('../FaceEntry/FaceEntry').default,
+            "exact": true
+          },
+          {
+            "component": () => React.createElement(require('D:/workspace/ant-smartpark-web/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+          }
+        ]
+      },
+      {
+        "path": "/epidemic",
+        "name": "疫情数据",
+        "routes": [
+          {
+            "path": "/epidemic/epidemicemployeeinfo",
+            "name": "员工基本信息查询",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Epidemicemployee/EpidemicemployeeInfo/EpidemicemployeeInfo'),
+      
+    })
+    : require('../Epidemicemployee/EpidemicemployeeInfo/EpidemicemployeeInfo').default,
+            "exact": true
+          },
+          {
+            "path": "/epidemic/dailyhealth",
+            "name": "员工每日健康",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Epidemicemployee/DailyHealth/DailyHealth'),
+      
+    })
+    : require('../Epidemicemployee/DailyHealth/DailyHealth').default,
+            "exact": true
+          },
+          {
+            "path": "/epidemic/epidemicemployee",
+            "name": "企业复工情况",
+            "component": __IS_BROWSER
+    ? _dvaDynamic({
+      
+      component: () => import(/* webpackChunkName: "layouts__AdminLayout" */'../Epidemicemployee/StatisticsEnterprisesWork/StatisticsEnterprisesList'),
+      
+    })
+    : require('../Epidemicemployee/StatisticsEnterprisesWork/StatisticsEnterprisesList').default,
             "exact": true
           },
           {
@@ -1078,8 +1432,8 @@ models: () => [
     "component": __IS_BROWSER
     ? _dvaDynamic({
       
-      component: () => import('../404'),
-      LoadingComponent: require('D:/workspace/ant-smartpark-web/src/components/PageLoading/index').default,
+      component: () => import(/* webpackChunkName: "p__404" */'../404'),
+      
     })
     : require('../404').default,
     "exact": true

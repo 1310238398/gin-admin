@@ -292,11 +292,13 @@ export default class extends PureComponent {
                   <td>
                     {
                       {
-                        1: <Badge color="yellow" text="支付中" />,
+                        1: <Badge color="orange" text="未支付" />,
                         2: <Badge color="green" text="支付成功" />,
                         3: <Badge color="red" text="支付失败" />,
+                        4: <Badge color="red" text="支付过期" />,
+                        5: <Badge color="red" text="异常状态" />,
                       }[editInfo.pay_status]
-                    }
+                    }{editInfo.pay_status === 3 ? `(${editInfo.pay_fail_reason})` : '' }    
                   </td>
                   <th>支付方式</th>
                   <td>
@@ -336,7 +338,7 @@ export default class extends PureComponent {
               editInfo.details.map(item => {
                 return (
                   <table className={styles.border}>
-                    <tbody>
+                    <tbody> 
                       <tr>
                         <th>记录编号</th>
                         <td colSpan={3}>{item.record_id}</td>

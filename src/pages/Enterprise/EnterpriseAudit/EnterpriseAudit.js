@@ -52,7 +52,14 @@ export default class EnterpriseAudit extends PureComponent {
     this.setState({ selectedRowKeys: [], selectedRows: [] });
   };
 
-  handleTableSelectRow = (keys, rows) => {
+  handleTableSelectRow  = (selectedRowKeys, selectedRows) => {
+    let keys = selectedRowKeys;
+    let rows = selectedRows;
+    if (selectedRowKeys.length > 1) {
+      keys = [selectedRowKeys[selectedRowKeys.length-1]];
+      rows = [selectedRows[selectedRowKeys.length-1]];
+    }
+
     this.setState({
       selectedRowKeys: keys,
       selectedRows: rows,
@@ -250,18 +257,19 @@ export default class EnterpriseAudit extends PureComponent {
     // const colWidthShort = 100;
     const colWidthNormal = 120;
     const columns = [
-      {
-        title: '企业LOGO',
-        dataIndex: 'enterprise',
-        key: 'enterprise',
-        render: value => {
-          return <img src={value.logo} alt="" style={{ width: 60, height: 60 }} />;
-        },
-      },
+      // {
+      //   title: '企业LOGO',
+      //   dataIndex: 'enterprise',
+      //   key: 'enterprise',
+      //   render: value => {
+      //     return <img src={value.logo} alt="" style={{ width: 60, height: 60 }} />;
+      //   },
+      // },
       {
         title: '企业名称',
         dataIndex: 'enterprise',
         key: 'enterprise',
+        width: 200,
         render: value => {
           return value ? value.name : '';
         },
@@ -293,27 +301,6 @@ export default class EnterpriseAudit extends PureComponent {
         render: val => {
           return <DicShow pcode="OPER$#company_type" code={[val.company_type]} show={name} />;
         },
-      },
-      {
-        title: '企业电话',
-        dataIndex: 'enterprise.phone',
-        width: 150,
-      },
-
-      {
-        title: '法定代表人',
-        dataIndex: 'enterprise.representative',
-        width: 150,
-      },
-      {
-        title: '企业管理员',
-        dataIndex: 'enterprise.applicant_name',
-        width: 150,
-      },
-      {
-        title: '联系电话',
-        dataIndex: 'enterprise.applicant_tel',
-        width: 150,
       },
       {
         title: '申请状态',
@@ -354,6 +341,28 @@ export default class EnterpriseAudit extends PureComponent {
         width: 200,
         key: 'audit_suggest',
       },
+      {
+        title: '企业电话',
+        dataIndex: 'enterprise.phone',
+        width: 100,
+      },
+
+      {
+        title: '法定代表人',
+        dataIndex: 'enterprise.representative',
+        width: 100,
+      },
+      {
+        title: '企业管理员',
+        dataIndex: 'enterprise.applicant_name',
+        width: 100,
+      },
+      {
+        title: '联系电话',
+        dataIndex: 'enterprise.applicant_tel',
+        width: 100,
+      },
+     
     ];
     const paginationProps = {
       showSizeChanger: true,
@@ -428,7 +437,7 @@ export default class EnterpriseAudit extends PureComponent {
                     查询
                   </Button>
                   <Button style={{ marginLeft: 8 }} onClick={this.onBtnClearClick}>
-                    清空
+                    重置
                   </Button>
                   {/* <a style={{ marginLeft: 8, fontSize: 12 }} onClick={this.onQueryFormToggleClick}>
                     {queryFormDisplayButtonJsx}
@@ -442,7 +451,7 @@ export default class EnterpriseAudit extends PureComponent {
                 <PButton
                   key="query"
                   code="query"
-                  icon="query"
+                  icon="read"
                   onClick={() => this.showEnterpriseStatueInfoFrame(selectedRows[0])}
                 >
                   查看
@@ -451,7 +460,7 @@ export default class EnterpriseAudit extends PureComponent {
                   <PButton
                     key="pass"
                     code="pass"
-                    icon="pass"
+                    type="primary"
                     onClick={() => this.onWriteOffCallback(selectedRows[0])}
                   >
                     通过
@@ -461,7 +470,7 @@ export default class EnterpriseAudit extends PureComponent {
                   <PButton
                     key="reject"
                     code="reject"
-                    icon="reject"
+                    type="danger"
                     onClick={() => this.onNOpassCallback(selectedRows[0])}
                   >
                     驳回

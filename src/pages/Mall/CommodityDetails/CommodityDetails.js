@@ -85,6 +85,10 @@ export default class CommodityDetails extends PureComponent {
           <div className={styles.content}>{data.store_name ? data.store_name : ''}</div>
         </div>
         <div className={styles.divBox}>
+          <span className={styles.title}>推荐值：</span>
+          <div className={styles.content}>{data.recommend_num ? data.recommend_num : 0}</div>
+        </div>
+        <div className={styles.divBox}>
           <span className={styles.title}>商品描述：</span>
           <div className={styles.contentDes}>{data.des ? data.des : ''}</div>
         </div>
