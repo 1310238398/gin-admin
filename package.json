@@ -28,7 +28,7 @@
     "lodash-decorators": "^6.0.0",
     "md5": "^2.2.1",
     "moment": "^2.19.3",
-    "node-forge": "^0.8.5",
+    "node-forge": "^0.10.0",
     "numeral": "^2.0.6",
     "path-to-regexp": "^2.4.0",
     "postprocessing": "^6.3.2",
