@@ -43,7 +43,7 @@
     "react-fittext": "^1.0.0",
     "react-html5video": "^2.5.1",
     "setprototypeof": "^1.1.0",
-    "three": "^0.104.0",
+    "three": "^0.137.0",
     "three.interaction": "^0.2.2",
     "uuid": "^3.3.2",
     "xss": "^1.0.6",
